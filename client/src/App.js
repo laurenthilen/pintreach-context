@@ -63,12 +63,12 @@ function App() {
           )}
         </nav>
 
-        {/* <Switch> */}
+        <Switch>
           <Route exact path="/login" render={props => <Login setLoggedin={setLoggedin} />}  />
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/profile" component={() => <Profile userInfo={userInfo} />} />
-        {/* </Switch> */}
+        </Switch>
       </div>
     </UserContext.Provider>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom"
-import * as yup from 'yup';
+import { Link } from "react-router-dom"
+import * as yup from "yup";
 
 import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
 
@@ -38,7 +38,6 @@ function SignUp(props){
     });
     const [buttonDisabled, setButtonDisabled] = useState(true);
     const [post, setPost] = useState([]);
-    const history = { useHistory };
 
     const handleChange = e => {
         e.persist();
@@ -63,7 +62,7 @@ function SignUp(props){
                     imageurl: "",
                 })
                 console.log("Response:", response.data)
-                history.push("/login")  
+                props.history.push("/login")  
             })
             .catch(err => console.log(err.response));
     };
@@ -96,7 +95,7 @@ function SignUp(props){
         <div>
             <div style={{ display:"flex", justifyContent:"center" }}>
                 <div className="signup-form" style={{ width:"80%", display:"flex", justifyContent:"center" }}>     
-                    <form onSubmit={handleSubmit}>
+                    <form>
                         <div style={{ padding:"10px", display:"flex", flexDirection:"column", justifyContent:"flex-start" }}>
                             <CardHeader title="Sign Up" />
                             <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start" }}>
@@ -160,7 +159,16 @@ function SignUp(props){
                                 />
                             </InputLabel>
 
-                            <Button disabled={buttonDisabled} variant="contained" size="small" color="secondary" style={{ marginTop: 20 }}>Submit</Button>
+                            <Button 
+                                disabled={buttonDisabled} 
+                                variant="contained" 
+                                size="small" 
+                                color="secondary" 
+                                style={{ marginTop: 20 }}
+                                onClick={handleSubmit}
+                            >
+                                Submit
+                            </Button>
                             <p>Already have an account? <Link to="/login">Log In</Link></p>
                         </div>
                     </form>

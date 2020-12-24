@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, Link, useHistory } from "react-router-dom";
+import { Route, Switch, Link, useHistory, useParams } from "react-router-dom";
 import { PrivateRoute } from "./utils/PrivateRoute";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { UserContext } from "./contexts/context";
@@ -36,6 +36,21 @@ function App() {
     setLoggedin(false);
   };
 
+  // boards
+  const [boards, setBoards] = useState([]);
+  const params = useParams();
+
+  const fetchBoards = (id) => {
+    axiosWithAuth()
+        .get(`/boards/user/${id}`)
+        .then((res) => setBoards(res.data))
+        .catch((err) => console.log(err.response));
+  };
+
+  useEffect(() => {
+      fetchBoards(userInfo.userid);
+  }, [userInfo.userid]);
+
   return (
     <UserContext.Provider value={{ userInfo }}>
       <div className="App">
@@ -66,7 +81,7 @@ function App() {
         <Switch>
           <Route exact path="/login" render={props => <Login setLoggedin={setLoggedin} />}  />
           <Route exact path="/signup" component={SignUp} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={() => <Dashboard boards={boards} />} />
           <PrivateRoute exact path="/profile" component={() => <Profile userInfo={userInfo} />} />
         </Switch>
       </div>

@@ -54,7 +54,7 @@ function Login(props) {
             })
             .then(res => {
                 localStorage.setItem("token", res.data.access_token)
-                props.history.push("/dashboard")
+                props.setLoggedin(true)
                 setFormState({
                     username: "",
                     password: "",

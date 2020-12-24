@@ -4,7 +4,7 @@ function Profile(props){
 
     return (
         <div>
-            <h1>Profile</h1>
+            <h1>Welcome, {props.userInfo.username}</h1>
         </div>
     );
 };

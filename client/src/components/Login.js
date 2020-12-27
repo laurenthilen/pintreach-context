@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
 
 import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
@@ -25,7 +25,8 @@ function Login(props) {
         username: "",
         password: "",
     });
-    const [buttonDisabled, setButtonDisabled] = useState(true); 
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+    const history = useHistory(); 
 
     const handleChange = e => {
         e.persist();
@@ -55,6 +56,7 @@ function Login(props) {
             .then(res => {
                 localStorage.setItem("token", res.data.access_token)
                 props.setLoggedin(true)
+                history.push("/dashboard")
                 setFormState({
                     username: "",
                     password: "",

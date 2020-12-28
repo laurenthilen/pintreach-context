@@ -3,7 +3,22 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
 
-import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
+import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Alert from "@material-ui/lab/Alert";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "60%",
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+  btn: {
+      background: "rgb(8, 232, 222)",
+      color: "black",
+  },
+}));
 
 const formSchema = yup.object().shape({
     username: yup
@@ -26,6 +41,7 @@ function Login(props) {
         password: "",
     });
     const [buttonDisabled, setButtonDisabled] = useState(true);
+    const classes = useStyles();
     const history = useHistory(); 
 
     const handleChange = e => {
@@ -70,7 +86,7 @@ function Login(props) {
     useEffect(() => {
         formSchema.isValid(formState).then((valid) => {
             setButtonDisabled(!valid);
-            });
+        });
     }, [formState])
     
     const validateChange = event => {
@@ -93,12 +109,12 @@ function Login(props) {
 
     return (
         <div>
-            <div style={{ display:"flex", justifyContent:"center" }}>
-                <div className="login-form" style={{ width:"80%", display:"flex", justifyContent:"center" }}>     
-                    <form>
-                        <div style={{ padding:"10px", display:"flex", flexDirection:"column", justifyContent:"flex-start" }}>
-                            <CardHeader title="Log In" />
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start" }}>
+            <div className="login">
+                <div className="login-form">     
+                    <form className={classes.root}>
+                        <div className="login-container">
+                            <CardHeader title="Welcome to Pintreach" style={{ marginBottom:"10px" }} />
+                            <InputLabel id="auth-form-field">
                                 Username: 
                                 <TextField
                                     id="username"
@@ -113,7 +129,10 @@ function Login(props) {
                                     error={errors.username}
                                 />
                             </InputLabel>
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", marginTop: 10 }}>
+                            { 
+                                errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
+                            }
+                            <InputLabel  id="auth-form-field" style={{ marginTop: 20 }}>
                                 Password: 
                                 <TextField
                                     id="password"
@@ -128,25 +147,23 @@ function Login(props) {
                                     error={errors.password}
                                 />
                             </InputLabel>
-
+                            { 
+                                errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
+                            }
                             <Button 
+                                className={classes.btn}
                                 disabled={buttonDisabled} 
                                 variant="contained" 
                                 size="small" 
-                                color="secondary" 
-                                style={{ marginTop: 20 }}
+                                style={{ marginTop: 30 }}
                                 onClick={handleSubmit}
                             >
                                 Submit
                             </Button>
-                            <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                            <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/register">Sign Up</Link></Typography>
                         </div>
                     </form>
                 </div>
-            </div>
-            <div className="error" style={{ color:"red" }}>
-                <error>{errors.username}</error>
-                <error>{errors.password}</error>
             </div>
         </div>
     );

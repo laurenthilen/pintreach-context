@@ -32,8 +32,6 @@ function Board(props) {
                 thumbnail: newBoard.thumbnail
             })
             .then((res) => {
-                console.log(res.data)
-                fetchBoards()
                 setIsUpdated(true)
                 setNewBoard({        
                     title: "",

@@ -81,8 +81,8 @@ function SignUp(props){
             <div className="form-container1">     
                 <form className={classes.root}>
                     <div className="form-container2">
-                        <CardHeader title="Sign Up" style={{ marginBottom:"10px" }} />
-                        <InputLabel id="auth-form-field">
+                        <CardHeader title="Sign Up" />
+                        <InputLabel id="form-field">
                             Username: 
                             <TextField
                                 id="username"
@@ -100,7 +100,7 @@ function SignUp(props){
                         { 
                             errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
                         }
-                        <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
+                        <InputLabel id="form-field">
                             Password: 
                             <TextField
                                 id="password"
@@ -118,7 +118,7 @@ function SignUp(props){
                         { 
                             errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
                         }
-                        <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
+                        <InputLabel id="form-field">
                             Email: 
                             <TextField
                                 id="primaryemail"
@@ -136,7 +136,7 @@ function SignUp(props){
                         { 
                             errors.primaryemail ? <Alert severity="error">{errors.primaryemail}</Alert> : null 
                         }
-                        <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
+                        <InputLabel id="form-field">
                             Profile Image: 
                             <TextField
                                 id="imageurl"

@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles } from "./theme";
 
-import { TextField, InputLabel, Button } from "@material-ui/core";
+import { TextField, InputLabel, Button, CardHeader, Card } from "@material-ui/core";
 
 function Board(props) {
     const { userInfo } = useContext(UserContext)
@@ -18,7 +18,6 @@ function Board(props) {
     const classes = useStyles();
 
     const handleChange = event => {
-        // event.persist();
         setNewBoard({
             ...newBoard, 
             [event.target.name]: event.target.value
@@ -41,6 +40,7 @@ function Board(props) {
                     description: "",
                     thumbnail: "",
                 });
+                props.setOpen(false);
             })
             .catch(err => console.log(err.message));
     };
@@ -50,80 +50,60 @@ function Board(props) {
     }, [isUpdated])
 
     return (
-        <div>
-            <div style={{ display:"flex", justifyContent:"center" }}>
-                <div className="board-form" style={{ width:"80%", display:"flex", justifyContent:"center" }}>
-                    <form>
-                        <InputLabel 
-                            style={{ 
-                                display:"flex",        
-                                flexDirection:"column", 
-                                alignItems:"flex-start"
-                            }}
-                        >
-                            Name: 
-                            <TextField
-                                id="title"
-                                type="text"
-                                name="title"
-                                value={newBoard.title}
-                                onChange={handleChange}
-                                variant="outlined"
-                                size="small"
-                                style={{ marginTop: 4 }}
-                            />
-                        </InputLabel>
-                        <InputLabel 
-                            style={{ 
-                                display:"flex", 
-                                flexDirection:"column", 
-                                alignItems:"flex-start",
-                                marginTop: 10 
-                            }}
-                        >
-                            Description:
-                            <TextField
-                                type="text"
-                                name="description"
-                                value={newBoard.description}
-                                onChange={handleChange}
-                                variant="outlined"
-                                size="small"
-                                style={{ marginTop: 4 }}
-                            />
-                        </InputLabel>
-                        <InputLabel 
-                            style={{ 
-                                display:"flex", 
-                                flexDirection:"column", 
-                                alignItems:"flex-start",
-                                marginTop: 10 
-                            }}
-                        >
-                            Thumbnail:
-                            <TextField
-                                type="text"
-                                name="thumbnail"
-                                value={newBoard.thumbnail}
-                                onChange={handleChange}
-                                variant="outlined"
-                                size="small"
-                                style={{ marginTop: 4 }}
-                            />
-                        </InputLabel>
-                        <Button 
-                            className={classes.btn} 
-                            variant="contained" 
-                            size="small" 
-                            style={{ marginTop: 20 }}
-                            onClick={handleSubmit}
-                        >
-                            Add Board
-                        </Button>
-                     </form>
-                </div>
+        <div className="form">
+            <div className="form-container1">
+                <form>
+                    <CardHeader title="Create Board" />
+                    <InputLabel id="form-field" style={{ marginTop:"2px" }}>
+                        Name: 
+                        <TextField
+                            id="title"
+                            type="text"
+                            name="title"
+                            value={newBoard.title}
+                            onChange={handleChange}
+                            variant="outlined"
+                            size="small"
+                            style={{ marginTop: 4 }}
+                        />
+                    </InputLabel>
+                    <InputLabel id="form-field">
+                        Description:
+                        <TextField
+                            type="text"
+                            name="description"
+                            value={newBoard.description}
+                            onChange={handleChange}
+                            variant="outlined"
+                            size="small"
+                            style={{ marginTop: 4 }}
+                        />
+                    </InputLabel>
+                    <InputLabel id="form-field">
+                        Thumbnail:
+                        <TextField
+                            type="text"
+                            name="thumbnail"
+                            value={newBoard.thumbnail}
+                            onChange={handleChange}
+                            variant="outlined"
+                            size="small"
+                            style={{ marginTop: 4 }}
+                        />
+                    </InputLabel>
+                    <Button 
+                        className={classes.btn} 
+                        variant="contained" 
+                        size="small" 
+                        style={{ marginTop: 30 }}
+                        fullWidth
+                        onClick={handleSubmit}
+                    >
+                        Create
+                    </Button>
+                </form>
             </div>
-    </div>
+        </div>
     );
 };
 

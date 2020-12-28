@@ -90,8 +90,8 @@ function Login(props) {
             <div className="form-container1">     
                 <form className={classes.root}>
                     <div className="form-container2">
-                        <CardHeader title="Welcome to Pintreach" style={{ marginBottom:"10px" }} />
-                        <InputLabel id="auth-form-field">
+                        <CardHeader title="Welcome to Pintreach" />
+                        <InputLabel id="form-field">
                             Username: 
                             <TextField
                                 id="username"
@@ -109,7 +109,7 @@ function Login(props) {
                         { 
                             errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
                         }
-                        <InputLabel  id="auth-form-field" style={{ marginTop: 20 }}>
+                        <InputLabel id="form-field">
                             Password: 
                             <TextField
                                 id="password"

@@ -2,24 +2,12 @@ import React, { useState, useEffect} from "react"
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
+
 import { loginSchema as formSchema } from "./yupSchemas";
+import { useStyles } from "./theme";
 
 import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "60%",
-    '& > * + *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-  btn: {
-      background: "rgb(8, 232, 222)",
-      color: "black",
-  },
-}));
 
 function Login(props) {
     const [formState, setFormState] = useState({

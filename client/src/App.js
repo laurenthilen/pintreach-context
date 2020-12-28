@@ -9,24 +9,11 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
+import { useStyles } from "./components/theme";
 
 import logo from "./assets/logo.png";
 import { Button } from "@material-ui/core";
 import "./App.css";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  btn: {
-      background: "rgb(8, 232, 222)",
-      color: "black",
-      marginLeft: "20px"
-  },
-  btn2: {
-    background: "rgb(216, 216, 216)",
-    color: "black",
-    marginLeft: "20px"
-  }
-}));
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
@@ -86,21 +73,25 @@ function App() {
             </div>
             {loggedin ? (
               <div className="navbar-right">
-                <Button className={classes.btn}>
+                <Button className={classes.btn3}>
                   <Link to="/dashboard" className="nav-link">
                     Dashboard
                   </Link>
                 </Button>
-                <Button className={classes.btn2}>
+                <Button className={classes.btn3}>
                   <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
                 </Button>
-                <button onClick={logout}>Logout</button>
+                <Button className={classes.btn3} onClick={logout}>
+                  <Link className="nav-link">
+                    Logout
+                  </Link>
+                </Button>
               </div>
             ) : (
               <div className="navbar-right">
-                <Button className={classes.btn}>
+                <Button className={classes.btn3}>
                   <Link to="/login" className="nav-link">
                     Login
                   </Link>

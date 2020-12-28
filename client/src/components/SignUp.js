@@ -2,29 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
+import { signUpSchema as formSchema } from "./yupSchemas";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-
-const formSchema = yup.object().shape({
-    username: yup
-        .string()
-        .min(2, "Username must be at least 2 characters long.")
-        .required("Username is required."),
-    password: yup
-        .string()
-        .min(6, "Passwords must be at least 6 characters long.")
-        .required("Must include password."),
-    primaryemail: yup
-        .string()
-        .email("Must be a valid email address.")
-        .required("Must include email address."),
-    imageurl: yup
-        .string()
-        .required("Please enter your imageurl."),
-});
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -108,10 +90,10 @@ function SignUp(props){
 
     return (
         <div>
-            <div className="login">
-                <div className="login-form">     
+            <div className="form">
+                <div className="form-container1">     
                     <form className={classes.root}>
-                        <div className="login-container">
+                        <div className="form-container2">
                             <CardHeader title="Sign Up" style={{ marginBottom:"10px" }} />
                             <InputLabel id="auth-form-field">
                                 Username: 

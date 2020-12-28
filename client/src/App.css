@@ -38,18 +38,18 @@ nav {
   color: black;
 }
 
-.login {
+.form {
   display: flex; 
   justify-content: center;
 }
 
-.login-form {
+.form-container1 {
   width: 80%;
   display: flex;
   justify-content: center;
 }
 
-.login-container {
+.form-container2 {
   border: 0;
   border-radius: 6px;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(216, 216, 216, 0.12),

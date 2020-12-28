@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react"
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
+import { loginSchema as formSchema } from "./yupSchemas";
 
 import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,17 +20,6 @@ const useStyles = makeStyles((theme) => ({
       color: "black",
   },
 }));
-
-const formSchema = yup.object().shape({
-    username: yup
-        .string()
-        .min(2, "Username must be at least 2 characters long.")
-        .required("Username is required."),
-    password: yup
-        .string()
-        .min(6, "Passwords must be at least 6 characters long.")
-        .required("Must include password."),
-});
 
 function Login(props) {
     const [formState, setFormState] = useState({
@@ -108,10 +98,10 @@ function Login(props) {
     };
 
     return (
-        <div className="login">
-            <div className="login-form">     
+        <div className="form">
+            <div className="form-container1">     
                 <form className={classes.root}>
-                    <div className="login-container">
+                    <div className="form-container2">
                         <CardHeader title="Welcome to Pintreach" style={{ marginBottom:"10px" }} />
                         <InputLabel id="auth-form-field">
                             Username: 

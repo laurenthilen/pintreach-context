@@ -108,62 +108,60 @@ function Login(props) {
     };
 
     return (
-        <div>
-            <div className="login">
-                <div className="login-form">     
-                    <form className={classes.root}>
-                        <div className="login-container">
-                            <CardHeader title="Welcome to Pintreach" style={{ marginBottom:"10px" }} />
-                            <InputLabel id="auth-form-field">
-                                Username: 
-                                <TextField
-                                    id="username"
-                                    type="text"
-                                    name="username"
-                                    value={formState.username}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    variant="outlined"
-                                    size="small"
-                                    style={{ marginTop: 4 }}
-                                    error={errors.username}
-                                />
-                            </InputLabel>
-                            { 
-                                errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
-                            }
-                            <InputLabel  id="auth-form-field" style={{ marginTop: 20 }}>
-                                Password: 
-                                <TextField
-                                    id="password"
-                                    type="password"
-                                    name="password"
-                                    value={formState.password}
-                                    onChange={handleChange}
-                                    fullWidth
-                                    variant="outlined"
-                                    size="small"
-                                    style={{ marginTop: 4 }}
-                                    error={errors.password}
-                                />
-                            </InputLabel>
-                            { 
-                                errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
-                            }
-                            <Button 
-                                className={classes.btn}
-                                disabled={buttonDisabled} 
-                                variant="contained" 
-                                size="small" 
-                                style={{ marginTop: 30 }}
-                                onClick={handleSubmit}
-                            >
-                                Submit
-                            </Button>
-                            <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/register">Sign Up</Link></Typography>
-                        </div>
-                    </form>
-                </div>
+        <div className="login">
+            <div className="login-form">     
+                <form className={classes.root}>
+                    <div className="login-container">
+                        <CardHeader title="Welcome to Pintreach" style={{ marginBottom:"10px" }} />
+                        <InputLabel id="auth-form-field">
+                            Username: 
+                            <TextField
+                                id="username"
+                                type="text"
+                                name="username"
+                                value={formState.username}
+                                onChange={handleChange}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                style={{ marginTop: 4 }}
+                                error={errors.username}
+                            />
+                        </InputLabel>
+                        { 
+                            errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
+                        }
+                        <InputLabel  id="auth-form-field" style={{ marginTop: 20 }}>
+                            Password: 
+                            <TextField
+                                id="password"
+                                type="password"
+                                name="password"
+                                value={formState.password}
+                                onChange={handleChange}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                style={{ marginTop: 4 }}
+                                error={errors.password}
+                            />
+                        </InputLabel>
+                        { 
+                            errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
+                        }
+                        <Button 
+                            className={classes.btn}
+                            disabled={buttonDisabled} 
+                            variant="contained" 
+                            size="small" 
+                            style={{ marginTop: 30 }}
+                            onClick={handleSubmit}
+                        >
+                            Submit
+                        </Button>
+                        <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/register">Sign Up</Link></Typography>
+                    </div>
+                </form>
             </div>
         </div>
     );

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
 
-import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 
 const formSchema = yup.object().shape({
     username: yup
@@ -23,6 +25,20 @@ const formSchema = yup.object().shape({
         .required("Please enter your imageurl."),
 });
 
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      width: "60%",
+      '& > * + *': {
+        marginTop: theme.spacing(2),
+      },
+    },
+    btn: {
+        background: "rgb(8, 232, 222)",
+        color: "black",
+    },
+}));
+
 function SignUp(props){
     const [formState, setFormState] = useState({
         username: "",
@@ -37,7 +53,8 @@ function SignUp(props){
         imageurl: "",
     });
     const [buttonDisabled, setButtonDisabled] = useState(true);
-    const [post, setPost] = useState([]);
+    const classes = useStyles();
+    const history = useHistory();
 
     const handleChange = e => {
         e.persist();
@@ -54,15 +71,13 @@ function SignUp(props){
         axios
             .post("https://laurene-pintreach.herokuapp.com/registeruser", formState)
             .then(response => { 
-                setPost([...post, response.data]);
                 setFormState({
                     username:"",
                     primaryemail: "",
                     password: "",
                     imageurl: "",
                 })
-                console.log("Response:", response.data)
-                props.history.push("/login")  
+                history.push("/login")  
             })
             .catch(err => console.log(err.response));
     };
@@ -93,12 +108,12 @@ function SignUp(props){
 
     return (
         <div>
-            <div style={{ display:"flex", justifyContent:"center" }}>
-                <div className="signup-form" style={{ width:"80%", display:"flex", justifyContent:"center" }}>     
-                    <form>
-                        <div style={{ padding:"10px", display:"flex", flexDirection:"column", justifyContent:"flex-start" }}>
-                            <CardHeader title="Sign Up" />
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start" }}>
+            <div className="login">
+                <div className="login-form">     
+                    <form className={classes.root}>
+                        <div className="login-container">
+                            <CardHeader title="Sign Up" style={{ marginBottom:"10px" }} />
+                            <InputLabel id="auth-form-field">
                                 Username: 
                                 <TextField
                                     id="username"
@@ -113,7 +128,10 @@ function SignUp(props){
                                     error={errors.username}
                                 />
                             </InputLabel>
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", marginTop: 10 }}>
+                            { 
+                                errors.username ? <Alert severity="error">{errors.username}</Alert> : null 
+                            }
+                            <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
                                 Password: 
                                 <TextField
                                     id="password"
@@ -128,7 +146,10 @@ function SignUp(props){
                                     error={errors.password}
                                 />
                             </InputLabel>
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", marginTop: 10 }}>
+                            { 
+                                errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
+                            }
+                            <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
                                 Email: 
                                 <TextField
                                     id="primaryemail"
@@ -143,7 +164,10 @@ function SignUp(props){
                                     error={errors.primaryemail}
                                 />
                             </InputLabel>
-                            <InputLabel style={{ display:"flex", flexDirection:"column", alignItems:"flex-start", marginTop: 10 }}>
+                            { 
+                                errors.primaryemail ? <Alert severity="error">{errors.primaryemail}</Alert> : null 
+                            }
+                            <InputLabel id="auth-form-field" style={{ marginTop: 20 }}>
                                 Profile Image: 
                                 <TextField
                                     id="imageurl"
@@ -158,27 +182,23 @@ function SignUp(props){
                                     error={errors.imageurl}
                                 />
                             </InputLabel>
-
+                            { 
+                                errors.imageurl ? <Alert severity="error">{errors.imageurl}</Alert> : null 
+                            }
                             <Button 
+                                className={classes.btn}
                                 disabled={buttonDisabled} 
                                 variant="contained" 
                                 size="small" 
-                                color="secondary" 
-                                style={{ marginTop: 20 }}
+                                style={{ marginTop: 30 }}
                                 onClick={handleSubmit}
                             >
                                 Submit
                             </Button>
-                            <p>Already have an account? <Link to="/login">Log In</Link></p>
+                            <Typography style={{ marginTop:"20px" }}>Already have an account? <Link to="/login">Log In</Link></Typography>
                         </div>
                     </form>
                 </div>
-            </div>
-            <div className="error" style={{ color:"red" }}>
-                <error>{errors.username}</error>
-                <error>{errors.primaryemail}</error>
-                <error>{errors.password}</error>
-                <error>{errors.imageurl}</error>
             </div>
         </div>
     );

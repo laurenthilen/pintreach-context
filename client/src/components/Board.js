@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+
 import { UserContext } from "../contexts/UserContext";
 import { BoardContext } from "../contexts/BoardContext";
+import { useStyles } from "./theme";
 
 import { TextField, InputLabel, Button } from "@material-ui/core";
 
@@ -13,6 +15,7 @@ function Board(props) {
         description: "",
         thumbnail: "",
     })
+    const classes = useStyles();
 
     const handleChange = event => {
         // event.persist();
@@ -109,10 +112,9 @@ function Board(props) {
                             />
                         </InputLabel>
                         <Button 
-                            id="addBoardBtn" 
+                            className={classes.btn} 
                             variant="contained" 
                             size="small" 
-                            color="secondary" 
                             style={{ marginTop: 20 }}
                             onClick={handleSubmit}
                         >

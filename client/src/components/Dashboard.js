@@ -26,7 +26,7 @@ function Dashboard(props){
         <div className="list">
             <Card className="boards-container">
                 <Button className="boards-btn" onClick={handleOpen}>
-                    <img src={plus} alt="add board" width="100px" style={{ backgroundColor:"white" }} />
+                    <img src={plus} alt="add board" width="80px" style={{ backgroundColor:"white" }} />
                 </Button>
                 <Modal
                     open={open}
@@ -42,12 +42,16 @@ function Dashboard(props){
                 <div />
             ) : (
                 boards.map(board => (
-                    <div className={classes.cardSize}>
-                        <Card key={board.boardid} style={{ paddingBottom:"0px" }}>
-                            <CardActionArea component={Link} key={board.boardid} to={`/board/${board.boardid}`}>
+                    <div>
+                        <Card key={board.boardid} className="boards-container">
+                            <CardActionArea 
+                                component={Link} 
+                                key={board.boardid} 
+                                to={`/board/${board.boardid}`}
+                            >
                                 <CardHeader title={board.title} />
                                 <Typography>{board.description}</Typography>
-                                <img className={classes.media} src={board.thumbnail} alt={board.title} />
+                                <img src={board.thumbnail} alt={board.title} width="100%" style={{ paddingTop:"8px" }}/>
                             </CardActionArea>
                         </Card>
                     </div>

@@ -3,7 +3,6 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 import { UserContext } from "../contexts/UserContext";
 import { BoardContext } from "../contexts/BoardContext";
-import { useStyles } from "./theme";
 
 import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
 
@@ -15,7 +14,6 @@ function AddBoard(props) {
         description: "",
         thumbnail: "",
     })
-    const classes = useStyles();
 
     const handleChange = event => {
         setNewBoard({

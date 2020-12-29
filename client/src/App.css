@@ -21,20 +21,20 @@ nav {
 }
 
 .navbar-left {
-  width: 70%;
+  width: 40%;
   display: flex; 
   align-items: center;
 }
 
 .navbar-right {
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
 }
 
 .nav-link {
   text-decoration: none;
-  padding: 0 12px;
+  padding: 0 10px;
   color: black;
 }
 

@@ -9,7 +9,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
-import Articles from "./components/Articles";
+import Articles from "./components/Board";
 import { useStyles } from "./components/theme";
 
 import logo from "./assets/logo.png";
@@ -111,7 +111,7 @@ function App() {
             <Route exact path="/signup" component={SignUp} />
             <PrivateRoute exact path="/dashboard" component={Dashboard}/>
             <PrivateRoute exact path="/profile" component={Profile} />
-            <PrivateRoute exact path="/articles/:boardid" component={Articles} />
+            <PrivateRoute exact path="/board/:boardid" component={Articles} />
           </Switch>
         </div>
       </BoardContext.Provider>

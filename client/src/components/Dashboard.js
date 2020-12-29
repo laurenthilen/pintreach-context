@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import Board from "./Board";
+import AddBoard from "./AddBoard";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles, getModalStyle } from "./theme";
 import plus from "../assets/plus.png";
@@ -33,7 +33,7 @@ function Dashboard(props){
                     onClose={handleClose}
                 >
                     <div style={modalStyle} className={classes.paper}>
-                        <Board setOpen={setOpen} />
+                        <AddBoard setOpen={setOpen} />
                     </div>
                 </Modal>
             </Card>
@@ -44,7 +44,7 @@ function Dashboard(props){
                 boards.map(board => (
                     <div className={classes.cardSize}>
                         <Card key={board.boardid} style={{ paddingBottom:"0px" }}>
-                            <CardActionArea component={Link} key={board.boardid} to={`/articles/${board.boardid}`}>
+                            <CardActionArea component={Link} key={board.boardid} to={`/board/${board.boardid}`}>
                                 <CardHeader title={board.title} />
                                 <Typography>{board.description}</Typography>
                                 <img className={classes.media} src={board.thumbnail} alt={board.title} />

@@ -155,7 +155,7 @@ function SignUp(props){
                             errors.imageurl ? <Alert severity="error">{errors.imageurl}</Alert> : null 
                         }
                         <Button 
-                            className={classes.btn}
+                            id="btn"
                             disabled={buttonDisabled} 
                             variant="contained" 
                             size="small" 

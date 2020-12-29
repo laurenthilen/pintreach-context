@@ -1,0 +1,262 @@
+[
+    {
+        "source": {
+        "id": "cnn",
+        "name": "CNN"
+        },
+        "author": "Alec Snyder, Peter Nickeas and Nicquel Terry Ellis, CNN",
+        "title": "The Columbus, Ohio, officer who killed Andre Hill has been fired - CNN",
+        "description": "Adam Coy, the Columbus, Ohio, police officer who shot and killed Andre Hill, has been fired, according to a statement from Columbus Public Safety Director Ned Pettus Jr.",
+        "url": "https://www.cnn.com/2020/12/28/us/andre-hill-adam-coy-fired/index.html",
+        "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/201224010126-columbus-ohio-police-shooting-screengrab-122320-super-tease.jpg",
+        "publishedAt": "2020-12-28T23:51:00Z",
+        "content": null
+    },
+    {
+        "source": {
+        "id": "politico",
+        "name": "Politico"
+        },
+        "author": "Heather Caygle",
+        "title": "House passes stimulus check boost as Republicans splinter - POLITICO",
+        "description": "With Trump calling for more economic relief, Democrats are eager to squeeze the GOP.",
+        "url": "https://www.politico.com/news/2020/12/28/house-passes-coronavirus-stimulus-check-boost-republicans-splinter-451504",
+        "urlToImage": "https://static.politico.com/b2/ce/594e364642a59a4cd176375c4aac/gettyimages-1293502795-s.jpg",
+        "publishedAt": "2020-12-28T23:28:00Z",
+        "content": "We couldve passed the bill four days ago but our colleagues on the other side went against the presidents wishes and blocked it, House Ways and Means Committee Chairman Richard Neal (D-Mass.) said Mo… [+5270 chars]"
+    },
+    {
+        "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+        },
+        "author": "Tim Stelloh, Mosheh Gains",
+        "title": "Green Beret charged in mass shooting that left three dead may have PTSD, lawyer says - NBC News",
+        "description": "The U.S. Army sergeant accused of murdering three people and injuring three more in a weekend shooting at an Illinois bowling alley may have post-traumatic stress disorder, his lawyer said Monday.",
+        "url": "https://www.nbcnews.com/news/us-news/green-beret-charged-mass-shooting-left-three-dead-may-have-n1252451",
+        "urlToImage": "https://media4.s-nbcnews.com/j/newscms/2020_52/3438224/201227-wrex-bowling-alley-shooting-jm-0934_70b8a2ce0b5582344ce22dd949753801.nbcnews-fp-1200-630.jpg",
+        "publishedAt": "2020-12-28T23:14:00Z",
+        "content": "The U.S. Army sergeant accused of murdering three people and injuring three more in a weekend shooting at an Illinois bowling alley may have post-traumatic stress disorder, his lawyer said Monday.\r\nT… [+2182 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "CNBC"
+        },
+        "author": "Fred Imbert",
+        "title": "U.S. stock futures rise slightly after Monday’s record-setting jump - CNBC",
+        "description": "U.S. stock futures opened flat on Monday night following a rally that lifted the major averages to fresh record highs.",
+        "url": "https://www.cnbc.com/2020/12/28/stock-market-futures-open-to-close-news.html",
+        "urlToImage": "https://image.cnbcfm.com/api/v1/image/106810838-1607962037162NYSE-Trading-Floor-Photo-20201214-Press-9-jpg?v=1608812162",
+        "publishedAt": "2020-12-28T23:01:00Z",
+        "content": "U.S. stock futures rose slightly on Monday night following a rally that lifted the major averages to fresh record highs.\r\nDow Jones Industrial Average futures traded 92 points higher, or 0.3%. S&amp;… [+2106 chars]"
+    },
+    {
+        "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+        },
+        "author": "Daniella Silva, Tom Winter, Donna Mendell",
+        "title": "Bomber in Nashville Christmas explosion was 'loner,' IT consultant, sources say - NBC News",
+        "description": "Anthony Warner, according to people who knew him, was described as a loner and a recently retired information technology consultant.",
+        "url": "https://www.nbcnews.com/news/us-news/bomber-nashville-christmas-explosion-was-loner-it-consultant-sources-say-n1252444",
+        "urlToImage": "https://media4.s-nbcnews.com/j/newscms/2020_53/3438125/201225-nashville-explosion-al-1703_ff840b7089fc8069c1802a12cd427716.nbcnews-fp-1200-630.jpg",
+        "publishedAt": "2020-12-28T23:00:00Z",
+        "content": "Before he was identified as the suspect and the only person killed in the Christmas morning explosion in Nashville, Tennessee, Anthony Warner, according to people who knew him, was a loner who had re… [+5336 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "ESPN"
+        },
+        "author": "Brady Henderson",
+        "title": "Seattle Seahawks waive veteran DT Damon 'Snacks' Harrison - ESPN",
+        "description": "The Seattle Seahawks waived defensive tackle Damon Harrison a day after he tweeted that it was \"time to move on\" from the team.",
+        "url": "https://www.espn.com/nfl/story/_/id/30614283/seattle-seahawks-waive-veteran-dt-damon-snacks-harrison",
+        "urlToImage": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2020%2F1227%2Fr795178_1296x729_16%2D9.jpg",
+        "publishedAt": "2020-12-28T22:59:17Z",
+        "content": "SEATTLE -- The Seattle Seahawks have waived veteran defensive tackle Damon \"Snacks\" Harrison at his request.\r\nThe team announced the move Monday, one day after Harrison was a healthy scratch for Seat… [+3622 chars]"
+    },
+    {
+        "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+        },
+        "author": "Paul Steinhauser",
+        "title": "Biden calls transition ‘obstruction’ by Defense Department irresponsible - Fox News",
+        "description": "Taking aim at what he calls President Trump’s “go-it-alone” approach to international affairs, President-elect Joe Biden says he’ll restore “American leadership” across the globe.",
+        "url": "https://www.foxnews.com/politics/biden-vows-to-restore-americas-global-leadership",
+        "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2020/12/AP20363691045810.jpg",
+        "publishedAt": "2020-12-28T22:57:03Z",
+        "content": "President-elect Joe Biden says his transition teams have \"encountered obstruction\" from President Trump’s political leadership at the Defense Department and the Office of Management and Budget.\r\nAnd … [+4232 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "Packers.com"
+        },
+        "author": null,
+        "title": "Packers played 'physical football' in season's biggest win to date - Packers.com",
+        "description": "Promising developments emerged on both sides of the ball vs. Titans",
+        "url": "https://www.packers.com/news/packers-played-physical-football-in-season-s-biggest-win-to-date",
+        "urlToImage": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/packers/rfzntu6rhdsbegvynpo9",
+        "publishedAt": "2020-12-28T22:44:15Z",
+        "content": "The swarming, the energy, the cheering each other on all played into a physical brand of defense that gives the Packers a new standard as the season's stakes get higher.\r\nOn offense, the standard has… [+1151 chars]"
+    },
+    {
+        "source": {
+        "id": "nfl-news",
+        "name": "NFL News"
+        },
+        "author": null,
+        "title": "Dwayne Haskins' rapid downfall in Washington not just QB's doing - NFL.com",
+        "description": "In the wake of his release, Dwayne Haskins is undoubtedly responsible for much of his demise, but Judy Battista says the Washington culture that drafted him 15th overall shares in the big-picture blame.",
+        "url": "https://www.nfl.com/news/dwayne-haskins-rapid-downfall-in-washington-not-just-qb-s-doing",
+        "urlToImage": "https://static.www.nfl.com/image/private/t_editorial_landscape_12_desktop/league/e0arvabnr2shy228chic",
+        "publishedAt": "2020-12-28T22:32:00Z",
+        "content": "Dwayne Haskins may not go down as one of the worst draft busts in NFL history, but that is largely a matter of only ranking. With his release Monday -- a week after photos surfaced of a mask-less Has… [+3512 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "Barron's"
+        },
+        "author": "Craig Mellow",
+        "title": "Alibaba’s Woes Deepen in China. Why the Stock Is Starting to Look Oversold. - Barron's",
+        "description": "",
+        "url": "https://www.barrons.com/articles/alibabas-woes-deepen-in-china-why-the-stock-is-starting-to-look-oversold-51609194413",
+        "urlToImage": "https://images.barrons.com/im-278445/social",
+        "publishedAt": "2020-12-28T22:26:00Z",
+        "content": "Investors took a breather Monday from dumping shares in \r\n Alibaba Group Holding\r\n (ticker: BABA), the Chinese e-commerce giant newly under antitrust scrutiny. The stock traded flat after a 13% skid … [+3467 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "CNBC"
+        },
+        "author": "Kevin Breuninger",
+        "title": "Biden accuses Trump's Pentagon and OMB of obstruction, demands cooperation with transition team - CNBC",
+        "description": "\"It's nothing short, in my view, of irresponsibility,\" Biden said of the \"roadblocks\" from some Trump administration agencies.",
+        "url": "https://www.cnbc.com/2020/12/28/biden-accuses-trumps-pentagon-and-omb-of-obstruction-demands-cooperation.html",
+        "urlToImage": "https://image.cnbcfm.com/api/v1/image/106816742-1609187420288-biden.jpg?v=1609187473",
+        "publishedAt": "2020-12-28T22:01:00Z",
+        "content": "President-elect Joe Biden said Monday his transition team has run into \"roadblocks\" and \"obstruction\" from Trump administration leaders at key agencies, hindering the incoming administration's effort… [+4560 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "Buffalo Rumblings"
+        },
+        "author": "Matt Warren",
+        "title": "Buffalo Bills activate John Brown from injured reserve before placing him on Reserve/COVID-19 list - Buffalo Rumblings",
+        "description": "The Buffalo Bills made a series of roster moves on Monday prior to their primetime game against the New England Patriots. They activated wide receiver John Brown from injured reserve and there was...",
+        "url": "https://www.buffalorumblings.com/2020/12/28/22203616/buffalo-bills-activate-john-brown-from-injured-reserve-before-placing-him-on-reserve-covid-19-list",
+        "urlToImage": "https://cdn.vox-cdn.com/thumbor/G0psTdXBNQuQ9gVXlxE0K7DaJTU=/0x33:2375x1369/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/68590248/1273759534.0.jpg",
+        "publishedAt": "2020-12-28T21:54:42Z",
+        "content": "The Buffalo Bills made a series of roster moves on Monday prior to their primetime game against the New England Patriots. They activated wide receiver John Brown from injured reserve and there was mu… [+1061 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "CNET"
+        },
+        "author": "Ian Sherr",
+        "title": "UPS, Amazon delivery drones are a step closer to reality with new US rules - CNET",
+        "description": "The government says drones will need to address new safety and security concerns.",
+        "url": "https://www.cnet.com/news/ups-amazon-delivery-drones-are-a-step-closer-to-reality-with-new-us-rules/",
+        "urlToImage": "https://cnet1.cbsistatic.com/img/TjHt9SKue2xZptHSofivj37GHs0=/1200x630/2015/02/15/d774471e-692a-4654-9429-b9538604bab4/image-gallery-02-v367569984-jpg.jpg",
+        "publishedAt": "2020-12-28T21:32:00Z",
+        "content": "That delivery drone is a step closer to reality.\r\nAmazon\r\nSomeday soon, you may not be waiting for packages delivered by a truck -- instead, they'll come overhead, via drone. But they might look a li… [+1922 chars]"
+    },
+    {
+        "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+        },
+        "author": "Alexandra Jaffe",
+        "title": "Biden warns of Trump officials' 'roadblocks' to transition - Associated Press",
+        "description": "WILMINGTON, Del. (AP) — President-elect Joe Biden is warning of massive damage done to the national security apparatus by the Trump administration and “roadblocks” in communication between agency...",
+        "url": "https://apnews.com/article/joe-biden-politics-national-security-delaware-wilmington-17c601926a1eddc6ad2ce2774fd0ff42",
+        "urlToImage": "https://storage.googleapis.com/afs-prod/media/1df1f25905fc4b04915d125761553bc4/3000.jpeg",
+        "publishedAt": "2020-12-28T21:07:25Z",
+        "content": "WILMINGTON, Del. (AP) President-elect Joe Biden is warning of massive damage done to the national security apparatus by the Trump administration and roadblocks in communication between agency officia… [+4660 chars]"
+    },
+    {
+        "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+        },
+        "author": "Bethonie Butler, Sonia Rao",
+        "title": "From an Instagram joke to an Alec Baldwin rant: The Hilaria Baldwin accent controversy, explained - The Washington Post",
+        "description": "Is Hilaria Baldwin, wife of Alec, actually from Spain? It's only kind of complicated.",
+        "url": "https://www.washingtonpost.com/arts-entertainment/2020/12/28/hilaria-baldwin-accent-controversy-explained/",
+        "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ISQUYZXTRQI6VABFLU2IS5UKZA.jpg&w=1440",
+        "publishedAt": "2020-12-28T20:50:00Z",
+        "content": "Before this past week, Hilaria Baldwin (nee Hilary Hayward-Thomas) was only known to most as the yoga instructor and lifestyle podcaster who wed the 30 Rock actor back in 2012. The pair met the previ… [+7240 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "Fox Business"
+        },
+        "author": "Lucas Manfredi",
+        "title": "Hampton Bay ceiling fans sold at Home Depot recalled - Fox Business",
+        "description": "King of Fans, the manufacturer of the Hampton Bay 54-inch Mara indoor/outdoor ceiling fans, issued the recall.",
+        "url": "https://www.foxbusiness.com/lifestyle/190000-ceiling-fans-sold-at-home-depot-recalled",
+        "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/12/0/0/1-113711AM.png?ve=1&tl=1",
+        "publishedAt": "2020-12-28T20:31:46Z",
+        "content": "More than 190,000 ceiling fans sold at Home Depot are being recalled after reports that blades are detaching from the fans while in use.\r\n<table><tr><th>Ticker</th><th>Security</th><th>Last</th><th>C… [+2471 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "KSL.com"
+        },
+        "author": "Jacob Klopfenstein, KSL.com",
+        "title": "1716 more COVID-19 cases, 5 deaths reported in Utah Monday - KSL.com",
+        "description": "Utah's number of COVID-19 cases has increased by 1,716 on Monday, with five more deaths reported, according to the Utah Department of Health.",
+        "url": "https://www.ksl.com/article/50074296/1716-more-covid-19-cases-5-deaths-reported-in-utah-monday",
+        "urlToImage": "https://img.ksl.com/slc/2803/280398/28039806.jpeg?filter=ksl/responsive_story_lg",
+        "publishedAt": "2020-12-28T20:31:02Z",
+        "content": "SALT LAKE CITY Utah's number of COVID-19 cases has increased by 1,716 on Monday, with five more deaths reported, according to the Utah Department of Health.\r\nThe rolling seven-day average number of p… [+7098 chars]"
+    },
+    {
+        "source": {
+        "id": null,
+        "name": "KCRA Sacramento"
+        },
+        "author": "KCRA Staff",
+        "title": "Gov. Newsom holds COVID-19 briefing - KCRA Sacramento",
+        "description": "Gov. Gavin Newsom is holding a news briefing with the latest on the state's response to the coronavirus pandemic.",
+        "url": "https://www.kcra.com/article/gov-newsom-covid-19-briefing-dec-28/35083000",
+        "urlToImage": "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/newsom-1585683572.jpg?crop=1.00xw:0.901xh;0,0.0859xh&resize=1200:*",
+        "publishedAt": "2020-12-28T20:24:00Z",
+        "content": "SACRAMENTO, Calif. —Gov. Gavin Newsom is holding a news briefing with the latest on the state's response to the coronavirus pandemic.\r\n&gt;&gt; Watch the governor's news conference live in the player… [+795 chars]"
+    },
+    {
+        "source": {
+        "id": "ign",
+        "name": "IGN"
+        },
+        "author": "Jesse Schedeen",
+        "title": "Batgirl, Static Shock Among \"Riskier\" DC Movies to Be Made Exclusively for HBO Max - IGN - IGN",
+        "description": "DC fans can look forward to as many as six new movies per year starting in 2022, and \"riskier\" projects like Batgirl and Static Shock may be headed straight to HBO Max.",
+        "url": "https://www.ign.com/articles/batgirl-static-shock-risky-dc-movies-hbo-max-snyder-cut",
+        "urlToImage": "https://assets1.ignimgs.com/2020/12/28/batgirl-movie-hbo-max-1609184334820.jpg?width=1280",
+        "publishedAt": "2020-12-28T19:43:37Z",
+        "content": "With Wonder Woman 1984 now out in theaters and on HBO Max, the future of DC's movie universe is becoming more clear. As reported by the New York Times, Warner Bros. will begin accelerating its DC mov… [+3285 chars]"
+    },
+    {
+        "source": {
+        "id": "the-hill",
+        "name": "The Hill"
+        },
+        "author": "Justine Coleman",
+        "title": "German health care workers sent to hospital after coronavirus vaccine overdoses | TheHill - The Hill",
+        "description": "Four northern German health care workers were sent to the hospita...",
+        "url": "https://thehill.com/policy/international/531839-german-health-care-workers-sent-to-hospital-after-coronavirus-vaccine",
+        "urlToImage": "https://thehill.com/sites/default/files/covid_19_vaccine_germany_05252020.jpg",
+        "publishedAt": "2020-12-28T19:09:20Z",
+        "content": "Four northern German health care workers were sent to the hospital on Sunday after being accidentally given five times the recommended dose of coronavirus vaccine.\r\nOfficials from the Vorpommern-Rueg… [+1710 chars]"
+    }
+]

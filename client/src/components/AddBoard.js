@@ -92,7 +92,7 @@ function AddBoard(props) {
                         />
                     </InputLabel>
                     <Button 
-                        className={classes.btn} 
+                        id="btn"
                         variant="contained" 
                         size="small" 
                         style={{ marginTop: 30 }}

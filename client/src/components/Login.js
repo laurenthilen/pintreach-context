@@ -128,7 +128,7 @@ function Login(props) {
                             errors.password ? <Alert severity="error">{errors.password}</Alert> : null 
                         }
                         <Button 
-                            className={classes.btn}
+                            id="btn"
                             disabled={buttonDisabled} 
                             variant="contained" 
                             size="small" 

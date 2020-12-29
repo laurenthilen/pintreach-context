@@ -4,7 +4,7 @@ import { PrivateRoute } from "./utils/PrivateRoute";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { UserContext } from "./contexts/UserContext";
 import { BoardContext } from "./contexts/BoardContext";
-import axios from "axios";
+// import axios from "axios";
 
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Board from "./components/Board";
 import Articles from "./components/Articles";
 import { useStyles } from "./components/theme";
+import articles from "./assets/data.json"
 
 import logo from "./assets/logo.png";
 import { Button } from "@material-ui/core";
@@ -67,18 +68,18 @@ function App() {
   }, [isUpdated]);
 
   // articles
-  const [articles, setArticles] = useState([]);
+  // const [articles, setArticles] = useState([]);
 
-  const getArticles = () => {
-    axios
-      .get("https://newsapi.org/v2/top-headlines?country=us&apiKey=0aff37691fc248aea950f3992e4004a0")
-      .then(res => setArticles(res.data))
-      .catch(err => console.log(err));
-  };
+  // const getArticles = () => {
+  //   axios
+  //     .get("https://newsapi.org/v2/top-headlines?country=us&apiKey=0aff37691fc248aea950f3992e4004a0")
+  //     .then(res => setArticles(res.data))
+  //     .catch(err => console.log(err));
+  // };
 
-  useEffect(() => {
-    getArticles();
-  }, [articles]);
+  // useEffect(() => {
+  //   getArticles();
+  // }, [articles]);
 
   return (
     <UserContext.Provider value={{ userInfo }}>
@@ -89,24 +90,24 @@ function App() {
               <img src={logo} alt="logo" width="50px" height="50px" />
               <h1 style={{ marginLeft:"8px" }}>Pintreach</h1>
             </div>
-            {loggedin ? (
+            {localStorage.getItem("token") ? (
               <div className="navbar-right">
-                 <Button className={classes.btn3}>
+                 <Button id="btn3">
                   <Link to="/articles" className="nav-link">
                     Articles
                   </Link>
                 </Button>
-                <Button className={classes.btn3}>
+                <Button id="btn3">
                   <Link to="/dashboard" className="nav-link">
                     Dashboard
                   </Link>
                 </Button>
-                <Button className={classes.btn3}>
+                <Button id="btn3">
                   <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
                 </Button>
-                <Button className={classes.btn3} onClick={logout}>
+                <Button id="btn3" onClick={logout}>
                   <Link className="nav-link">
                     Logout
                   </Link>
@@ -114,12 +115,12 @@ function App() {
               </div>
             ) : (
               <div className="navbar-right">
-                <Button className={classes.btn3}>
+                <Button id="btn3">
                   <Link to="/login" className="nav-link">
                     Login
                   </Link>
                 </Button>
-                <Button className={classes.btn2}>
+                <Button id="btn2">
                   <Link to="/signup" className="nav-link">
                     Sign Up
                   </Link>

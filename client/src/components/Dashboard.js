@@ -1,18 +1,19 @@
 import React, { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import Board from "./Board";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles, getModalStyle } from "./theme";
 import plus from "../assets/plus.png";
 
-import { Typography, Button, CardHeader, Card, Modal } from "@material-ui/core";
+import { Typography, Button, CardHeader, Card, Modal, CardActionArea } from "@material-ui/core";
 
 function Dashboard(props){
     const { boards } = useContext(BoardContext);
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
-  
+
     const handleOpen = () => {
       setOpen(true);
     };
@@ -41,11 +42,15 @@ function Dashboard(props){
                 <div />
             ) : (
                 boards.map(board => (
-                    <Card className="boards-container" key={board.boardid}>
-                        <CardHeader title={board.title} />
-                        <Typography>{board.description}</Typography>
-                        <img className={classes.media} src={board.thumbnail} alt={board.title} />
-                    </Card>
+                    <div className={classes.cardSize}>
+                        <Card key={board.boardid} style={{ paddingBottom:"0px" }}>
+                            <CardActionArea component={Link} key={board.boardid} to={`/articles/${board.boardid}`}>
+                                <CardHeader title={board.title} />
+                                <Typography>{board.description}</Typography>
+                                <img className={classes.media} src={board.thumbnail} alt={board.title} />
+                            </CardActionArea>
+                        </Card>
+                    </div>
                 ))
             )}
         </div>

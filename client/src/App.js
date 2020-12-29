@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
+import Articles from "./components/Articles";
 import { useStyles } from "./components/theme";
 
 import logo from "./assets/logo.png";
@@ -108,8 +109,9 @@ function App() {
           <Switch>
             <Route exact path="/login" render={props => <Login setLoggedin={setLoggedin} />}  />
             <Route exact path="/signup" component={SignUp} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard}/>
             <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute exact path="/articles/:boardid" component={Articles} />
           </Switch>
         </div>
       </BoardContext.Provider>

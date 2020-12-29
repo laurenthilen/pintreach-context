@@ -34,6 +34,12 @@ export const useStyles = makeStyles((theme) => ({
       height: 0,
       paddingTop: "56.25%", // 16:9
     },
+    cardSize: {
+      paddingBottom: "0px",
+      width: "300px", 
+      height: "300px", 
+      marginBottom: "4%",
+    },
 }));
 
 function rand() {

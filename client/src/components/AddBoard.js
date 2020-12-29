@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles } from "./theme";
 
-import { TextField, InputLabel, Button, CardHeader, Card } from "@material-ui/core";
+import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
 
 function AddBoard(props) {
     const { userInfo } = useContext(UserContext)

@@ -23,7 +23,7 @@ function Dashboard(props){
     };
 
     return (
-        <div className="boards">
+        <div className="list">
             <Card className="boards-container">
                 <Button className="boards-btn" onClick={handleOpen}>
                     <img src={plus} alt="add board" width="100px" style={{ backgroundColor:"white" }} />

@@ -4,12 +4,14 @@ import { PrivateRoute } from "./utils/PrivateRoute";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { UserContext } from "./contexts/UserContext";
 import { BoardContext } from "./contexts/BoardContext";
+import axios from "axios";
 
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
-import Articles from "./components/Board";
+import Board from "./components/Board";
+import Articles from "./components/Articles";
 import { useStyles } from "./components/theme";
 
 import logo from "./assets/logo.png";
@@ -22,6 +24,7 @@ function App() {
   const history = useHistory();
   const classes = useStyles();
 
+  // user info
   useEffect(() => {
     if (localStorage.getItem("token")) {
       axiosWithAuth()
@@ -63,9 +66,23 @@ function App() {
       fetchBoards();
   }, [isUpdated]);
 
+  // articles
+  const [articles, setArticles] = useState([]);
+
+  const getArticles = () => {
+    axios
+      .get("https://newsapi.org/v2/top-headlines?country=us&apiKey=0aff37691fc248aea950f3992e4004a0")
+      .then(res => setArticles(res.data))
+      .catch(err => console.log(err));
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, [articles]);
+
   return (
     <UserContext.Provider value={{ userInfo }}>
-      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated }}>
+      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles }}>
         <div className="App">
           <nav>
             <div className="navbar-left">
@@ -74,6 +91,11 @@ function App() {
             </div>
             {loggedin ? (
               <div className="navbar-right">
+                 <Button className={classes.btn3}>
+                  <Link to="/articles" className="nav-link">
+                    Articles
+                  </Link>
+                </Button>
                 <Button className={classes.btn3}>
                   <Link to="/dashboard" className="nav-link">
                     Dashboard
@@ -111,7 +133,8 @@ function App() {
             <Route exact path="/signup" component={SignUp} />
             <PrivateRoute exact path="/dashboard" component={Dashboard}/>
             <PrivateRoute exact path="/profile" component={Profile} />
-            <PrivateRoute exact path="/board/:boardid" component={Articles} />
+            <PrivateRoute exact path="/board/:boardid" component={Board} />
+            <PrivateRoute exact path="/articles" component={Articles} />
           </Switch>
         </div>
       </BoardContext.Provider>

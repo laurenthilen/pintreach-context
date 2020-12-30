@@ -17,6 +17,7 @@ function Login(props) {
     const [errors, setErrors] = useState({
         username: "",
         password: "",
+        loginfail:"",
     });
     const [buttonDisabled, setButtonDisabled] = useState(true);
     const classes = useStyles();
@@ -56,8 +57,8 @@ function Login(props) {
                     password: "",
                 });
             })
-            .catch(e => {
-                console.log(e);
+            .catch(err => {
+                setErrors({loginfail: err.message});
             })
     };
 
@@ -138,6 +139,9 @@ function Login(props) {
                             Submit
                         </Button>
                         <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/register">Sign Up</Link></Typography>
+                        { 
+                            errors.loginfail && <Alert style={{ marginTop:"20px", textAlign:"left" }} severity="error">{errors.loginfail}. Invalid username and/or password.</Alert>
+                        }
                     </div>
                 </form>
             </div>

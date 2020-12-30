@@ -1,9 +1,6 @@
 [
     {
-        "source": {
-        "id": "cnn",
-        "name": "CNN"
-        },
+        "source": "cnn",
         "author": "Alec Snyder, Peter Nickeas and Nicquel Terry Ellis, CNN",
         "title": "The Columbus, Ohio, officer who killed Andre Hill has been fired - CNN",
         "description": "Adam Coy, the Columbus, Ohio, police officer who shot and killed Andre Hill, has been fired, according to a statement from Columbus Public Safety Director Ned Pettus Jr.",

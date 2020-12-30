@@ -12,7 +12,6 @@ import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Board from "./components/Board";
 import Articles from "./components/Articles";
-import { useStyles } from "./components/theme";
 import articles from "./assets/data.json"
 
 import logo from "./assets/logo.png";
@@ -23,8 +22,8 @@ function App() {
   const [loggedin, setLoggedin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
   const history = useHistory();
-  const classes = useStyles();
 
+  console.log(articles)
   // user info
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -81,9 +80,23 @@ function App() {
   //   getArticles();
   // }, [articles]);
 
+  const [savedArticles, setSavedArticles] = useState([]);
+
+  const addArticles = (boardid, article) => {
+    if (localStorage.getItem("token")) {
+    axiosWithAuth()
+      .put(`/boards/board/${boardid}`, {boardid, articles: [{...articles, article}], users: {userInfo}})
+      .then((res) => {
+        fetchBoards();
+        setIsUpdated(true);
+      })
+      .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <UserContext.Provider value={{ userInfo }}>
-      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles }}>
+      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles, savedArticles, addArticles}}>
         <div className="App">
           <nav>
             <div className="navbar-left">

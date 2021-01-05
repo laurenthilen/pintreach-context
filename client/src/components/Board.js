@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import { BoardContext } from "../contexts/BoardContext";
+
+import { Typography, Button, CardHeader, Card, CardActionArea } from "@material-ui/core";
 
 function Board(props){
     const { boards } = useContext(BoardContext);
@@ -20,10 +22,17 @@ function Board(props){
                                 <div />
                                 ) : (
                                     board.articles.map(article => (
-                                        <div key={article.article.title}>
-                                        <h3>{article.article.title}</h3>
-                                    {console.log(board)}
-                                    </div>
+                                        <Card key={article.article.title}>
+                                            <CardActionArea 
+                                                component={Link} 
+                                                key={article.articleid} 
+                                                to={article.article.url}
+                                                target="_blank"
+                                                rel={"external"}
+                                            >
+                                                <CardHeader title={article.article.title} />
+                                            </CardActionArea>
+                                        </Card>
                                 ))
                             )
                         }

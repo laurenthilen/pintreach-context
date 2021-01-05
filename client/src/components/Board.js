@@ -23,15 +23,19 @@ function Board(props){
                                 ) : (
                                     board.articles.map(article => (
                                         <Card key={article.article.title}>
-                                            <CardActionArea 
-                                                component={Link} 
-                                                key={article.articleid} 
-                                                to={article.article.url}
-                                                target="_blank"
-                                                rel={"external"}
+                                            <Button 
+                                                id="btn"
+                                                variant="contained" 
+                                                size="small" 
+                                                style={{ marginTop:30, marginBottom:30 }}
+                                                target="_blank" 
+                                                rel="noreferrer" 
+                                                href={JSON.parse(article.article.url)}
                                             >
-                                                <CardHeader title={article.article.title} />
-                                            </CardActionArea>
+                                                View
+                                                {/* <a target="_blank" rel="noreferrer" href={JSON.parse(article.article.url)} style={{ textDecoration:"none" }}>View</a> */}
+                                            </Button>
+
                                         </Card>
                                 ))
                             )

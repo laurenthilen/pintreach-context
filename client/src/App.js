@@ -23,7 +23,6 @@ function App() {
   const [userInfo, setUserInfo] = useState([]);
   const history = useHistory();
 
-  console.log(articles)
   // user info
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -31,7 +30,6 @@ function App() {
         .get("/users/myinfo")
         .then(res => {
           setUserInfo(res.data);
-          console.log(userInfo)
           history.push("/dashboard")
         })
         .catch(err => {
@@ -55,7 +53,6 @@ function App() {
           .get("/boards/boards")
           .then((res) => {
             setBoards(res.data)
-            console.log(boards)
             setIsUpdated(false)
           })
           .catch((err) => console.log(err.response));
@@ -80,23 +77,26 @@ function App() {
   //   getArticles();
   // }, [articles]);
 
-  const [savedArticles, setSavedArticles] = useState([]);
-
-  const addArticles = (boardid, article) => {
-    if (localStorage.getItem("token")) {
+  const addArticles = (board, article) => {
     axiosWithAuth()
-      .put(`/boards/board/${boardid}`, {boardid, articles: [{...articles, article}], users: {userInfo}})
+      .post("/articles/article", {
+        title: JSON.stringify(article.title),
+        description: JSON.stringify(article.description),
+        url: JSON.stringify(article.url),
+        author: JSON.stringify(article.author),
+        urlToImage: JSON.stringify(article.urlToImage),
+        boards: [{...board, board: { boardid: board.boardid }}],
+    })
       .then((res) => {
         fetchBoards();
         setIsUpdated(true);
       })
       .catch((err) => console.log(err));
-    }
   };
 
   return (
     <UserContext.Provider value={{ userInfo }}>
-      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles, savedArticles, addArticles}}>
+      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles}}>
         <div className="App">
           <nav>
             <div className="navbar-left">

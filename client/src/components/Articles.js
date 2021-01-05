@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
 function Articles(props){
     const { boards, articles, addArticles } = useContext(BoardContext);
     const { userInfo } = useContext(UserContext);
+    const userid = userInfo.userid;
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = useState("");
 
-    console.log(boards)
     // modal
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -79,7 +79,7 @@ function Articles(props){
     const handleOpen = (article) => {
         setOpen(true);
         setSelectedArticle(article);
-        console.log(selectedArticle)
+
     };
     
     const handleClose = () => {
@@ -88,13 +88,12 @@ function Articles(props){
     };
 
     // dropdown
-    const [board, setBoard] = useState({});
+    const [board, setBoard] = useState("");
     const [openDropdown, setOpenDropdown] = useState(false);
 
     const handleChange = (event) => {
-        setBoard(event.target.value);
-        console.log(event.target.value, selectedArticle)
-        addArticles(event.target.value.boardid, selectedArticle)
+        event.preventDefault();
+        addArticles(event.target.value, selectedArticle)
         // resets
         // setBoard({})
         // setSelectedArticle([])

@@ -43,7 +43,7 @@ function Dashboard(props){
             ) : (
                 boards.map(board => (
                     <div>
-                        <Card key={board.boardid} className="boards-container">
+                        <Card className="boards-container">
                             <CardActionArea 
                                 component={Link} 
                                 key={board.boardid} 
@@ -52,6 +52,7 @@ function Dashboard(props){
                                 <CardHeader title={board.title} />
                                 <Typography>{board.description}</Typography>
                                 <img src={board.thumbnail} alt={board.title} width="100%" style={{ paddingTop:"8px" }}/>
+                             
                             </CardActionArea>
                         </Card>
                     </div>

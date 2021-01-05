@@ -9,6 +9,23 @@ function Profile(props){
             <h1>Welcome, {userInfo.username}</h1>
             <p>{userInfo.primaryemail}</p>
             <img src={userInfo.imageurl} alt={userInfo.username} />
+
+            {
+                !userInfo.boards ? (
+                    <div />
+                ) : (
+                    userInfo.boards.map(board => (
+                        <div key={board.boardid}>
+                            <h1>{board.title}</h1>
+                            {
+                                board.articles.map(article => (
+                                    <h1>{article.title}</h1>
+                                ))
+                            }
+                        </div>
+                    ))
+                )
+            }
         </div>
     );
 };

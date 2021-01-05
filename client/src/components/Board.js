@@ -13,18 +13,22 @@ function Board(props){
         <div>
             {
                 board.map(board => (
-                    <h1>{board.title}</h1>
+                    <div>
+                        <h1>{board.title}</h1>
+                        {
+                            !board.articles ? (
+                                <div />
+                                ) : (
+                                    board.articles.map(article => (
+                                        <div key={article.article.title}>
+                                        <h3>{article.article.title}</h3>
+                                    {console.log(board)}
+                                    </div>
+                                ))
+                            )
+                        }
+                    </div>
                 ))
-
-            }
-            {
-                !board.articles ? (
-                    <div />
-                ) : (
-                    board.articles.map(article => (
-                        <h1>{article.title}</h1>
-                    ))
-                )
             }
         </div>
     );

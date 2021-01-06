@@ -109,7 +109,7 @@ function Articles(props){
 
     return (
         <div>
-            <h1>Articles</h1>
+            <h1 style={{ color:"white" }}>Articles</h1>
             <div className="list">
                 {!articles ? (
                     <div />

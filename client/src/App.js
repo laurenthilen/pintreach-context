@@ -4,7 +4,6 @@ import { PrivateRoute } from "./utils/PrivateRoute";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { UserContext } from "./contexts/UserContext";
 import { BoardContext } from "./contexts/BoardContext";
-// import axios from "axios";
 
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -63,20 +62,6 @@ function App() {
       fetchBoards();
   }, [isUpdated]);
 
-  // articles
-  // const [articles, setArticles] = useState([]);
-
-  // const getArticles = () => {
-  //   axios
-  //     .get("https://newsapi.org/v2/top-headlines?country=us&apiKey=0aff37691fc248aea950f3992e4004a0")
-  //     .then(res => setArticles(res.data))
-  //     .catch(err => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //   getArticles();
-  // }, [articles]);
-
   const addArticles = (board, article) => {
     axiosWithAuth()
       .post("/articles/article", {
@@ -97,11 +82,15 @@ function App() {
   return (
     <UserContext.Provider value={{ userInfo }}>
       <BoardContext.Provider value = {{ boards, setBoards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles}}>
+        <div className="gradient">
+          <div className="gradient-2" />
+          <div className="gradient-3" />
+        </div>
         <div className="App">
-          <nav>
+          <nav className="App-header">
             <div className="navbar-left">
               <img src={logo} alt="logo" width="50px" height="50px" />
-              <h1 style={{ marginLeft:"8px" }}>Pintreach</h1>
+              <h1 style={{ marginLeft:"15px" }}>Pintreach</h1>
             </div>
             {localStorage.getItem("token") ? (
               <div className="navbar-right">

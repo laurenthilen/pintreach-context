@@ -122,7 +122,7 @@ function App() {
                     Login
                   </Link>
                 </Button>
-                <Button id="btn2">
+                <Button id="btn3">
                   <Link to="/signup" className="nav-link">
                     Sign Up
                   </Link>

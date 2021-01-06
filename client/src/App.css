@@ -101,7 +101,9 @@ nav {
     2px 4px 8px rgba(216, 216, 216);
   padding: 20px 60px 60px; 
   display:flex;
-  flex-direction: column; justify-content: flex-start;
+  flex-direction: column; 
+  justify-content: flex-start;
+  background: white;
 }
 
 #form-field {
@@ -133,17 +135,6 @@ nav {
 
 #btn {
   background: rgb(8, 232, 222);
-  color: black;
-}
-
-#btn2 {
-  background: rgb(216, 216, 216);
-  color: black;
-  margin-left: 20px;
-}
-
-#btn2:hover {
-  background: rgb(216, 216, 216, .7);
 }
 
 #btn3 {
@@ -151,6 +142,6 @@ nav {
   margin-left: 20px;
 }
 
-#btn3:hover, #btn:hover {
+#btn:hover, #btn3:hover {
   background: rgb(8, 232, 222, .7);
 }

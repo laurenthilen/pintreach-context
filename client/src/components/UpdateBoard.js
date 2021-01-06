@@ -35,7 +35,7 @@ function UpdateBoard(props) {
 
         axiosWithAuth()
             .put(`/boards/board/${props.edit.boardid}`, newEdit)
-            .then(res => {
+            .then((res) => {
                 props.setFormOpen(false)
                 props.setEdit({})
                 setIsUpdated(true)

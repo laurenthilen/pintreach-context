@@ -81,7 +81,7 @@ function App() {
 
   return (
     <UserContext.Provider value={{ userInfo }}>
-      <BoardContext.Provider value = {{ boards, setBoards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles}}>
+      <BoardContext.Provider value = {{ boards, setBoards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles }}>
         <div className="gradient">
           <div className="gradient-2" />
           <div className="gradient-3" />
@@ -94,21 +94,21 @@ function App() {
             </div>
             {localStorage.getItem("token") ? (
               <div className="navbar-right">
-                 <Button id="btn3">
-                  <Link to="/articles" className="nav-link">
-                    Articles
-                  </Link>
-                </Button>
                 <Button id="btn3">
                   <Link to="/dashboard" className="nav-link">
                     Dashboard
                   </Link>
                 </Button>
-                <Button id="btn3">
+                 <Button id="btn3">
+                  <Link to="/articles" className="nav-link">
+                    Articles
+                  </Link>
+                </Button>
+                {/* <Button id="btn3">
                   <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
-                </Button>
+                </Button> */}
                 <Button id="btn3" onClick={logout}>
                   <Link className="nav-link">
                     Logout

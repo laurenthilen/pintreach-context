@@ -5,6 +5,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import AddBoard from "./AddBoard";
 import UpdateBoard from "./UpdateBoard";
 import { BoardContext } from "../contexts/BoardContext";
+import { UserContext } from "../contexts/UserContext";
 import { useStyles, getModalStyle } from "./theme";
 import plus from "../assets/plus.png";
 
@@ -12,7 +13,8 @@ import { Button, CardHeader, Card, Modal, CardActionArea, IconButton, CardAction
 import { Delete, Edit } from "@material-ui/icons";
 
 function Dashboard(props){
-    const { boards, setBoards, setIsUpdated } = useContext(BoardContext);
+    const { boards, setBoards } = useContext(BoardContext);
+    const { userInfo } = useContext(UserContext);
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
@@ -48,57 +50,63 @@ function Dashboard(props){
     };
 
     return (
-        <div className="list">
-            <Card className="boards-container" style={{ height:"337px" }}>
-                <Button className="boards-btn" onClick={handleOpen}>
-                    <img src={plus} alt="add board" width="80px" style={{ backgroundColor:"white" }} />
-                </Button>
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                >
-                    <div style={modalStyle} className={classes.paper}>
-                        <AddBoard setOpen={setOpen} />
-                    </div>
-                </Modal>
-            </Card>
+        <div>
+            <div className="profile-info">
+                <img src={userInfo.imageurl} alt={userInfo.username} width="150px" height="150px" style={{ borderRadius:"100%" }} />
+                <h1>Welcome, {userInfo.username}</h1>
+            </div>
+            <div className="list">
+                <Card className="boards-container" style={{ height:"337px" }}>
+                    <Button className="boards-btn" onClick={handleOpen}>
+                        <img src={plus} alt="add board" width="80px" style={{ backgroundColor:"white" }} />
+                    </Button>
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                    >
+                        <div style={modalStyle} className={classes.paper}>
+                            <AddBoard setOpen={setOpen} />
+                        </div>
+                    </Modal>
+                </Card>
 
-            {!boards ? (
-                <div />
-            ) : (
-                boards.map(board => (
-                    <div>
-                        <Card className="boards-container">
-                            <CardActionArea 
-                                component={Link} 
-                                key={board.boardid} 
-                                to={`/board/${board.boardid}`}
-                            >
-                                <CardHeader title={board.title} />
-                                <img src={board.thumbnail} alt={board.title} width="100%" height="200px" style={{ paddingTop:"6px" }}/>
-                            </CardActionArea>
-                            <CardActions disableSpacing>
-                                <IconButton onClick={() => handleDelete(board.boardid)} >
-                                    <Delete />
-                                </IconButton>
-                                <div>
-                                    <IconButton onClick={() => handleFormOpen(board)}>
-                                        <Edit />
+                {!boards ? (
+                    <div />
+                ) : (
+                    boards.map(board => (
+                        <div>
+                            <Card className="boards-container">
+                                <CardActionArea 
+                                    component={Link} 
+                                    key={board.boardid} 
+                                    to={`/board/${board.boardid}`}
+                                >
+                                    <CardHeader title={board.title} />
+                                    <img src={board.thumbnail} alt={board.title} width="100%" height="200px" style={{ paddingTop:"6px" }}/>
+                                </CardActionArea>
+                                <CardActions disableSpacing>
+                                    <IconButton onClick={() => handleDelete(board.boardid)} >
+                                        <Delete />
                                     </IconButton>
-                                    <Modal
-                                        open={formOpen}
-                                        onClose={handleFormClose}
-                                    >
-                                        <div style={modalStyle} className={classes.paper}>
-                                            <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
-                                        </div>
-                                    </Modal>
-                                </div>
-                            </CardActions>
-                        </Card>
-                    </div>
-                ))
-            )}
+                                    <div>
+                                        <IconButton onClick={() => handleFormOpen(board)}>
+                                            <Edit />
+                                        </IconButton>
+                                        <Modal
+                                            open={formOpen}
+                                            onClose={handleFormClose}
+                                        >
+                                            <div style={modalStyle} className={classes.paper}>
+                                                <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
+                                            </div>
+                                        </Modal>
+                                    </div>
+                                </CardActions>
+                            </Card>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
     );
 };

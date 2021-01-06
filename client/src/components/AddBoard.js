@@ -67,18 +67,6 @@ function AddBoard(props) {
                         />
                     </InputLabel>
                     <InputLabel id="form-field">
-                        Description:
-                        <TextField
-                            type="text"
-                            name="description"
-                            value={newBoard.description}
-                            onChange={handleChange}
-                            variant="outlined"
-                            size="small"
-                            style={{ marginTop: 4 }}
-                        />
-                    </InputLabel>
-                    <InputLabel id="form-field">
                         Thumbnail:
                         <TextField
                             type="text"

@@ -1,6 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import clsx from "clsx";
 
 import { BoardContext } from "../contexts/BoardContext";
 import { UserContext } from "../contexts/UserContext";

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { BoardContext } from "../contexts/BoardContext";
 
-import { Typography, Button, CardHeader, Card, CardActionArea } from "@material-ui/core";
+import { Button, CardHeader, Card } from "@material-ui/core";
 
 function Board(props){
     const { boards } = useContext(BoardContext);
@@ -22,20 +22,21 @@ function Board(props){
                                 <div />
                                 ) : (
                                     board.articles.map(article => (
-                                        <Card key={article.article.title}>
-                                            <Button 
-                                                id="btn"
-                                                variant="contained" 
-                                                size="small" 
-                                                style={{ marginTop:30, marginBottom:30 }}
-                                                target="_blank" 
-                                                rel="noreferrer" 
-                                                href={JSON.parse(article.article.url)}
-                                            >
-                                                View
-                                                {/* <a target="_blank" rel="noreferrer" href={JSON.parse(article.article.url)} style={{ textDecoration:"none" }}>View</a> */}
-                                            </Button>
-
+                                        <Card key={article.article.title} style={{ display:"flex", justifyContent:"center", padding:"2% 4%", marginBottom:"4%" }}>
+                                            <CardHeader title={article.article.title} style={{ paddingRight:"5%", textAlign:"left" }} />
+                                            <div style={{ width:"150px", display:"flex", alignItems:"center" }}>
+                                                <Button 
+                                                    id="btn"
+                                                    size="small"
+                                                    variant="contained" 
+                                                    target="_blank" 
+                                                    rel="noreferrer" 
+                                                    fullWidth
+                                                    href={JSON.parse(article.article.url)}
+                                                >
+                                                    View
+                                                </Button>
+                                            </div>
                                         </Card>
                                 ))
                             )

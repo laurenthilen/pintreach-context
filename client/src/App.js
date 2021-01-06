@@ -96,7 +96,7 @@ function App() {
 
   return (
     <UserContext.Provider value={{ userInfo }}>
-      <BoardContext.Provider value = {{ boards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles}}>
+      <BoardContext.Provider value = {{ boards, setBoards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles}}>
         <div className="App">
           <nav>
             <div className="navbar-left">

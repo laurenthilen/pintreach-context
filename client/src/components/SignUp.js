@@ -164,7 +164,7 @@ function SignUp(props){
                         >
                             Submit
                         </Button>
-                        <Typography style={{ marginTop:"20px" }}>Already have an account? <Link to="/login">Log In</Link></Typography>
+                        <Typography style={{ marginTop:"20px" }}>Already have an account? <Link to="/">Log In</Link></Typography>
                     </div>
                 </form>
             </div>

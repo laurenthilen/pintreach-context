@@ -47,15 +47,13 @@ function App() {
   const [isUpdated, setIsUpdated] = useState(false)
 
   const fetchBoards = () => {
-    if (localStorage.getItem("token")) {
-      axiosWithAuth()
-          .get("/boards/boards")
-          .then((res) => {
-            setBoards(res.data)
-            setIsUpdated(false)
-          })
-          .catch((err) => console.log(err.response));
-    }
+    axiosWithAuth()
+        .get("/boards/boards")
+        .then((res) => {
+          setBoards(res.data)
+          setIsUpdated(false)
+        })
+        .catch((err) => console.log(err.response));
   };
 
   useEffect(() => {

@@ -35,7 +35,7 @@ function App() {
           console.log(err);
         });
     }
-  }, [loggedin]);
+  }, [loggedin, history]);
 
   const logout = () => {
     localStorage.removeItem("token");

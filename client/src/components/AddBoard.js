@@ -43,7 +43,7 @@ function AddBoard(props) {
 
     useEffect(() => {
         fetchBoards();
-    }, [isUpdated])
+    }, [isUpdated, fetchBoards])
 
     return (
         <div className="form">

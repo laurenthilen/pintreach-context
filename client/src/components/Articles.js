@@ -92,14 +92,13 @@ function Articles(props){
     };
 
     // dropdown
-    const [board, setBoard] = useState("");
     const [openDropdown, setOpenDropdown] = useState(false);
 
     const handleChange = (event) => {
         event.preventDefault();
         addArticles(event.target.value, selectedArticle)
         setOpen(false)
-        setOpenDropdown(false)
+        setOpenDropdown(!openDropdown)
     };
 
     const handleDropdownOpen = () => {
@@ -151,7 +150,7 @@ function Articles(props){
                                                     open={open}
                                                     onClose={handleDropdownClose}
                                                     onOpen={handleDropdownOpen}
-                                                    value={board}
+                                                    value=""
                                                     onChange={handleChange}
                                                 >
                                                     {

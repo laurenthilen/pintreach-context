@@ -24,7 +24,7 @@ function App() {
 
   // user info
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (loggedin) {
       axiosWithAuth()
         .get("/users/myinfo")
         .then(res => {
@@ -80,7 +80,7 @@ function App() {
   };
 
   return (
-    <UserContext.Provider value={{ userInfo }}>
+    <UserContext.Provider value={{ userInfo, setLoggedin }}>
       <BoardContext.Provider value = {{ boards, setBoards, fetchBoards, isUpdated, setIsUpdated, articles, addArticles }}>
         <div className="gradient">
           <div className="gradient-2" />
@@ -89,10 +89,10 @@ function App() {
         <div className="App">
           <nav className="App-header">
             <div className="navbar-left">
-              <img src={logo} alt="logo" width="50px" height="50px" />
+              <img src={logo} alt="logo" className="logo" />
               <h1 style={{ marginLeft:"15px" }}>Pintreach</h1>
             </div>
-            {localStorage.getItem("token") ? (
+            {loggedin ? (
               <div className="navbar-right">
                 <Button id="btn3">
                   <Link to="/dashboard" className="nav-link">

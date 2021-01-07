@@ -52,7 +52,7 @@ function Dashboard(props){
     return (
         <div>
             <div className="profile-info">
-                <img src={userInfo.imageurl} alt={userInfo.username} width="150px" height="150px" style={{ borderRadius:"100%" }} />
+                <img src={userInfo.imageurl} alt={userInfo.username} className="profile-img" />
                 <h1>Welcome, {userInfo.username}</h1>
             </div>
             <div className="list">
@@ -88,19 +88,17 @@ function Dashboard(props){
                                     <IconButton onClick={() => handleDelete(board.boardid)} >
                                         <Delete />
                                     </IconButton>
-                                    <div>
-                                        <IconButton onClick={() => handleFormOpen(board)}>
-                                            <Edit />
-                                        </IconButton>
-                                        <Modal
-                                            open={formOpen}
-                                            onClose={handleFormClose}
-                                        >
-                                            <div style={modalStyle} className={classes.paper}>
-                                                <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
-                                            </div>
-                                        </Modal>
-                                    </div>
+                                    <IconButton onClick={() => handleFormOpen(board)}>
+                                        <Edit />
+                                    </IconButton>
+                                    <Modal
+                                        open={formOpen}
+                                        onClose={handleFormClose}
+                                    >
+                                        <div style={modalStyle} className={classes.paper}>
+                                            <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
+                                        </div>
+                                    </Modal>
                                 </CardActions>
                             </Card>
                         </div>

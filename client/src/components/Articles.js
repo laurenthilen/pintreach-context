@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 
 import { BoardContext } from "../contexts/BoardContext";
-import { UserContext } from "../contexts/UserContext";
 import { getModalStyle } from "./theme";
 
 import { Typography, CardHeader, CardContent, Card, Modal, CardActionArea, Collapse, CardActions, IconButton, makeStyles, FormControl, Button, InputLabel, Select, MenuItem } from "@material-ui/core";
@@ -9,7 +8,10 @@ import { ExpandMore, ExpandLess, Favorite } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      margin: "0 4% 2%",
+        margin: "2%",
+        [theme.breakpoints.down("sm")]: {
+            margin: "4%"
+        }
     },
     container: {
         width: "100%",
@@ -19,11 +21,17 @@ const useStyles = makeStyles((theme) => ({
         width: "55%",
         padding: "2% 6% 2% 6%",
         textAlign: "left",
+        [theme.breakpoints.down("sm")]: {
+            width: "100%",
+        }
     },
     right: {
         width: "25%",
         padding: "2% 6% 2% 0",
         height: 150,
+        [theme.breakpoints.down("sm")]: {
+            width: "0"
+        }
     },
     expand: {
         transform: "rotate(0deg)",
@@ -50,14 +58,12 @@ const useStyles = makeStyles((theme) => ({
     },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 150,
     },
 }));
 
 function Articles(props){
     const { boards, articles, addArticles } = useContext(BoardContext);
-    const { userInfo } = useContext(UserContext);
-    const userid = userInfo.userid;
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = useState("");
 
@@ -92,9 +98,6 @@ function Articles(props){
     const handleChange = (event) => {
         event.preventDefault();
         addArticles(event.target.value, selectedArticle)
-        // resets
-        // setBoard({})
-        // setSelectedArticle([])
         setOpen(false)
         setOpenDropdown(false)
     };
@@ -109,7 +112,6 @@ function Articles(props){
 
     return (
         <div>
-            <h1 style={{ color:"white" }}>Articles</h1>
             <div className="list">
                 {!articles ? (
                     <div />
@@ -130,7 +132,7 @@ function Articles(props){
                                     <img className={classes.right} src={article.urlToImage} alt={article.title}/>
                                 </div>
                             </CardActionArea>
-                            <CardActions style={{ paddingLeft:"2%", background:"rgb(216, 216, 216, .5)" }}>
+                            <CardActions>
                                 <IconButton onClick={() => handleOpen(article)}>
                                     <Favorite />
                                 </IconButton>
@@ -138,27 +140,22 @@ function Articles(props){
                                     open={open}
                                     onClose={handleClose}
                                 >
-                                    <div style={modalStyle} className={classes.paper} setOpen={setOpen}>
+                                    <div style={modalStyle} className={classes.paper}>
                                         <Card>
                                             <Button className={classes.button} onClick={handleDropdownOpen}>
-                                                Open the select
+                                                Select a board:
                                             </Button>
                                             <FormControl className={classes.formControl}>
                                                 <InputLabel>Board</InputLabel>
                                                 <Select
-                                                    labelId="demo-controlled-open-select-label"
-                                                    id="demo-controlled-open-select"
                                                     open={open}
                                                     onClose={handleDropdownClose}
                                                     onOpen={handleDropdownOpen}
                                                     value={board}
                                                     onChange={handleChange}
                                                 >
-                                                    <MenuItem value="">
-                                                        <em>None</em>
-                                                    </MenuItem>
                                                     {
-                                                        boards.map((board, i) => (
+                                                        boards.map(board => (
                                                             <MenuItem key={board.boardid} value={board} onChange={handleChange}>{board.title}</MenuItem>
                                                         ))
                                                     }

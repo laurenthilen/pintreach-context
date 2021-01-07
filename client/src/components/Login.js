@@ -1,10 +1,11 @@
-import React, { useState, useEffect} from "react"
+import React, { useState, useEffect, useContext} from "react"
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
 
 import { loginSchema as formSchema } from "./yupSchemas";
 import { useStyles } from "./theme";
+import { UserContext } from "../contexts/UserContext";
 
 import { TextField, InputLabel, Button, CardHeader, Typography } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
@@ -22,6 +23,7 @@ function Login(props) {
     const [buttonDisabled, setButtonDisabled] = useState(true);
     const classes = useStyles();
     const history = useHistory(); 
+    const { setLoggedin } = useContext(UserContext);
 
     const handleChange = e => {
         e.persist();
@@ -50,7 +52,7 @@ function Login(props) {
             })
             .then(res => {
                 localStorage.setItem("token", res.data.access_token)
-                props.setLoggedin(true)
+                setLoggedin(true)
                 history.push("/dashboard")
                 setFormState({
                     username: "",

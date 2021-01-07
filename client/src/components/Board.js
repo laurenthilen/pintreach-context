@@ -12,19 +12,19 @@ function Board(props){
     const board = boards.filter(b => JSON.stringify(b.boardid) === boardid);
 
     return (
-        <div>
+        <div className="board-articles">
             {
                 board.map(board => (
                     <div>
-                        <h1>{board.title}</h1>
+                        <h1 className="board-title">{board.title}</h1>
                         {
                             !board.articles ? (
                                 <div />
                                 ) : (
                                     board.articles.map(article => (
-                                        <Card key={article.article.title} style={{ display:"flex", justifyContent:"center", padding:"2% 4%", marginBottom:"4%" }}>
-                                            <CardHeader title={article.article.title} style={{ paddingRight:"5%", textAlign:"left" }} />
-                                            <div style={{ width:"150px", display:"flex", alignItems:"center" }}>
+                                        <Card key={article.article.title} className="board-articles-card">
+                                            <CardHeader title={article.article.title} className="board-articles-title" />
+                                            <div className="board-articles-btn">
                                                 <Button 
                                                     id="btn"
                                                     size="small"

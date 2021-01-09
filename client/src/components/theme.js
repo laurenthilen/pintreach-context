@@ -6,9 +6,13 @@ export const useStyles = makeStyles((theme) => ({
       '& > * + *': {
         marginTop: theme.spacing(2),
       },
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+        marginTop: "10%",
+      }
     },
     paper: {
-      position: "absolute",
+      position: "center",
       width: 300,
       paddingBottom: "50px",
       borderRadius: "6px",

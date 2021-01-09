@@ -99,8 +99,7 @@ nav {
 
 .form-container1 {
   width: 80%;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 20%;
 }
 
 .form-container2 {
@@ -174,7 +173,7 @@ nav {
   background: rgb(8, 232, 222, .7);
 }
 
-@media only screen and (max-width: 483px) {
+@media only screen and (max-width: 480px) {
   .gradient {
     margin-top: 32.5vh;
   }
@@ -208,6 +207,12 @@ nav {
   }
   .nav-link:hover {
     color: black;
+  }
+  .form-container1 {
+    width: 90%;
+  }
+  .form-container2 {
+    padding: 4% 8% 10%;  
   }
   .list {
     padding-top: 6%;

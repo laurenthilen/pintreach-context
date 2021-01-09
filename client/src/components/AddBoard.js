@@ -46,7 +46,7 @@ function AddBoard(props) {
     }, [isUpdated, fetchBoards])
 
     return (
-        <div className="form">
+        <div className="add-board-form">
             <div className="form-container1">
                 <form>
                     <CardHeader title="Create Board" />

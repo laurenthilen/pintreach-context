@@ -140,7 +140,7 @@ function Login(props) {
                         >
                             Submit
                         </Button>
-                        <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/register">Sign Up</Link></Typography>
+                        <Typography style={{ marginTop:"20px" }}>Don't have an account? <Link to="/signup">Sign Up</Link></Typography>
                         { 
                             errors.loginfail && <Alert style={{ marginTop:"20px", textAlign:"left" }} severity="error">{errors.loginfail}. Invalid username and/or password.</Alert>
                         }

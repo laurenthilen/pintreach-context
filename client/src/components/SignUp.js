@@ -47,7 +47,7 @@ function SignUp(props){
                     password: "",
                     imageurl: "",
                 })
-                history.push("/login")  
+                history.push("/")  
             })
             .catch(err => console.log(err.response));
     };

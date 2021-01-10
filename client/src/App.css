@@ -99,6 +99,8 @@ nav {
 
 .form-container1 {
   width: 80%;
+  display: flex;
+  justify-content: center;
   margin-bottom: 20%;
 }
 

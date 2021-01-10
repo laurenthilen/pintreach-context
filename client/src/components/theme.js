@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
       }
     },
     paper: {
-      position: "center",
+      position: "absolute",
       width: 300,
       paddingBottom: "50px",
       borderRadius: "6px",

@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 
 import { BoardContext } from "../contexts/BoardContext";
-import { getModalStyle } from "./theme";
+import FavoriteArticle from "./FavoriteArticle";
 
-import { Typography, CardHeader, CardContent, Card, Modal, CardActionArea, Collapse, CardActions, IconButton, makeStyles, FormControl, Button, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { Typography, CardHeader, CardContent, Card, Modal, CardActionArea, Collapse, CardActions, IconButton, makeStyles } from "@material-ui/core";
 import { ExpandMore, ExpandLess, Favorite } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -63,12 +63,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Articles(props){
-    const { boards, articles, addArticles } = useContext(BoardContext);
+    const { articles, addArticles } = useContext(BoardContext);
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = useState("");
 
     // modal
-    const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
     const [selectedArticle, setSelectedArticle] = useState({});
 
@@ -138,30 +137,14 @@ function Articles(props){
                                 <Modal
                                     open={open}
                                     onClose={handleClose}
+                                    style={{ backgroundColor:"rgb(255, 255, 255, .7)" }}
                                 >
-                                    <div style={modalStyle} className={classes.paper}>
-                                        <Card>
-                                            <Button className={classes.button} onClick={handleDropdownOpen}>
-                                                Select a board:
-                                            </Button>
-                                            <FormControl className={classes.formControl}>
-                                                <InputLabel>Board</InputLabel>
-                                                <Select
-                                                    open={open}
-                                                    onClose={handleDropdownClose}
-                                                    onOpen={handleDropdownOpen}
-                                                    value=""
-                                                    onChange={handleChange}
-                                                >
-                                                    {
-                                                        boards.map(board => (
-                                                            <MenuItem key={board.boardid} value={board} onChange={handleChange}>{board.title}</MenuItem>
-                                                        ))
-                                                    }
-                                                </Select>
-                                            </FormControl>
-                                        </Card>
-                                    </div>
+                                    <FavoriteArticle 
+                                        handleChange={handleChange} 
+                                        handleDropdownOpen={handleDropdownOpen}
+                                        handleDropdownClose={handleDropdownClose}
+                                        setOpen={setOpen}
+                                    />
                                 </Modal>
 
                                 <IconButton onClick={() => handleExpandClick(index)}>

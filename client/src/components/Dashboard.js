@@ -6,7 +6,7 @@ import AddBoard from "./AddBoard";
 import UpdateBoard from "./UpdateBoard";
 import { BoardContext } from "../contexts/BoardContext";
 import { UserContext } from "../contexts/UserContext";
-import { useStyles, getModalStyle } from "./theme";
+import { useStyles } from "./theme";
 import plus from "../assets/plus.png";
 
 import { Button, CardHeader, Card, Modal, CardActionArea, IconButton, CardActions } from "@material-ui/core";
@@ -16,7 +16,6 @@ function Dashboard(props){
     const { boards, setBoards } = useContext(BoardContext);
     const { userInfo } = useContext(UserContext);
     const classes = useStyles();
-    const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
     const [formOpen, setFormOpen] = useState(false);
     const [edit, setEdit] = useState({});
@@ -64,9 +63,7 @@ function Dashboard(props){
                         open={open}
                         onClose={handleClose}
                     >
-                        <div style={modalStyle} className={classes.paper}>
-                            <AddBoard setOpen={setOpen} />
-                        </div>
+                        <AddBoard setOpen={setOpen} />
                     </Modal>
                 </Card>
 
@@ -95,7 +92,7 @@ function Dashboard(props){
                                         open={formOpen}
                                         onClose={handleFormClose}
                                     >
-                                        <div style={modalStyle} className={classes.paper}>
+                                        <div className={classes.paper}>
                                             <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
                                         </div>
                                     </Modal>

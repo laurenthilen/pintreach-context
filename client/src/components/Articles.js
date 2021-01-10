@@ -123,6 +123,7 @@ function Articles(props){
                                     style={{ backgroundColor:"rgb(255, 255, 255, .7)" }}
                                 >
                                     <FavoriteArticle 
+                                        handleClose={handleClose}
                                         handleChange={handleChange} 
                                         handleDropdownOpen={handleDropdownOpen}
                                         handleDropdownClose={handleDropdownClose}

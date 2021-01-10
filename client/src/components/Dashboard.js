@@ -63,7 +63,7 @@ function Dashboard(props){
                         open={open}
                         onClose={handleClose}
                     >
-                        <AddBoard setOpen={setOpen} />
+                        <AddBoard setOpen={setOpen} handleClose={handleClose} />
                     </Modal>
                 </Card>
 
@@ -92,8 +92,13 @@ function Dashboard(props){
                                         open={formOpen}
                                         onClose={handleFormClose}
                                     >
-                                        <div className={classes.paper}>
-                                            <UpdateBoard edit={edit} setEdit={setEdit} setFormOpen={setFormOpen} />
+                                        <div>
+                                            <UpdateBoard 
+                                                edit={edit} 
+                                                setEdit={setEdit} 
+                                                setFormOpen={setFormOpen}
+                                                handleFormClose={handleFormClose}
+                                            />
                                         </div>
                                     </Modal>
                                 </CardActions>

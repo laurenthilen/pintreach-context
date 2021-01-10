@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 
 import { BoardContext } from "../contexts/BoardContext";
-
-import { Button, InputLabel, Select, MenuItem } from "@material-ui/core";
 import { useStyles } from "./theme";
+
+import { Close } from "@material-ui/icons";
+import { Button, InputLabel, Select, MenuItem, IconButton, CardActions } from "@material-ui/core";
 
 function FavoriteArticle(props){
     const { boards } = useContext(BoardContext);
@@ -14,6 +15,11 @@ function FavoriteArticle(props){
             <div className="form-container1"> 
                 <form className={classes.root}>
                     <div className="form-container2">
+                        <CardActions style={{flex:"display", justifyContent:"flex-end"}}>
+                            <IconButton onClick={props.handleClose}>
+                                <Close />
+                            </IconButton>
+                        </CardActions>
                         <Button onClick={props.handleDropdownOpen}>
                             Select a board:
                         </Button>

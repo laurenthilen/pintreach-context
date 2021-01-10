@@ -4,7 +4,8 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles } from "./theme";
 
-import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
+import { TextField, InputLabel, Button, CardHeader, IconButton, CardActions } from "@material-ui/core";
 
 function UpdateBoard(props) {
     const { setIsUpdated } = useContext(BoardContext);
@@ -61,6 +62,11 @@ function UpdateBoard(props) {
             <div className="form-container1">
                 <form className={classes.root}>
                     <div className="form-container2">
+                        <CardActions style={{flex:"display", justifyContent:"flex-end"}}>
+                            <IconButton onClick={props.handleFormClose}>
+                                <Close />
+                            </IconButton>
+                        </CardActions>
                         <CardHeader style={{textAlign:"center"}} title="Update Board" />
                         <InputLabel id="form-field" style={{ marginTop:"2px" }}>
                             Name: 

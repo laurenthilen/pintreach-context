@@ -5,7 +5,8 @@ import { UserContext } from "../contexts/UserContext";
 import { BoardContext } from "../contexts/BoardContext";
 import { useStyles } from "./theme";
 
-import { TextField, InputLabel, Button, CardHeader } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
+import { TextField, InputLabel, Button, CardHeader, IconButton, CardActions } from "@material-ui/core";
 
 function AddBoard(props) {
     const { userInfo } = useContext(UserContext)
@@ -52,6 +53,11 @@ function AddBoard(props) {
             <div className="form-container1">     
                 <form className={classes.root}>
                     <div className="form-container2">
+                        <CardActions style={{flex:"display", justifyContent:"flex-end"}}>
+                            <IconButton onClick={props.handleClose}>
+                                <Close />
+                            </IconButton>
+                        </CardActions>
                         <CardHeader style={{textAlign:"center"}} title="Create Board" />
                         <InputLabel id="form-field" style={{ marginTop:"2px" }}>
                             Name: 

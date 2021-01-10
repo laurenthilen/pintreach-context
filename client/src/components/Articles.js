@@ -43,23 +43,6 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
         transform: "rotate(180deg)",
     },
-    paper: {
-        position: "absolute",
-        width: 300,
-        paddingBottom: "50px",
-        borderRadius: "6px",
-        backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    },
-    button: {
-        display: "block",
-        marginTop: theme.spacing(2),
-    },
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 150,
-    },
 }));
 
 function Articles(props){

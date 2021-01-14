@@ -6,7 +6,6 @@ import AddBoard from "./AddBoard";
 import UpdateBoard from "./UpdateBoard";
 import { BoardContext } from "../contexts/BoardContext";
 import { UserContext } from "../contexts/UserContext";
-import { useStyles } from "./theme";
 import plus from "../assets/plus.png";
 
 import { Button, CardHeader, Card, Modal, CardActionArea, IconButton, CardActions } from "@material-ui/core";
@@ -15,7 +14,6 @@ import { Delete, Edit } from "@material-ui/icons";
 function Dashboard(props){
     const { boards, setBoards } = useContext(BoardContext);
     const { userInfo } = useContext(UserContext);
-    const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [formOpen, setFormOpen] = useState(false);
     const [edit, setEdit] = useState({});

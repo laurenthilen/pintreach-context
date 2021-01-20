@@ -1,70 +1,546 @@
-# Getting Started with Create React App
+# <span role="image" aria-label="📚" style="font-family: &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, NotoColorEmoji, &quot;Noto Color Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Android Emoji&quot;, EmojiSymbols; line-height: 1em;">📚</span> Pintreach Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+Pintreach is an article sharing application and research tool designed to enable saving and discovery of information on the internet.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Stories
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. The `User` login / signup flow
 
-### `npm test`
+2. A `User` can create, edit, or delete a `board`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. A `User` can save `articles` to a `board`
 
-### `npm run build`
+4. A `User` can view saved `articles` in `board`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. A `User` can delete saved `articles` in `board`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+#### Frontend
+- React
+- Context API
+- Material UI
+- CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Backend
+- Java
+- Spring Boot
+- JUnit 4
+- PostgreSQL
+- OAuth2
+- Swagger
+- Maven
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## APIs
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### [Front End](https://pintreach.netlify.app/) deployed via netlify
 
-## Learn More
+#### [Back End](https://laurene-pintreach.herokuapp.com) deployed via Heroku
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Endpoints
 
-### Code Splitting
+#### GET
+<details>
+<summary>http://localhost:2019/users/users</summary>
+  
+```JSON
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[
+    {
+        "userid": 6,
+        "username": "admin",
+        "primaryemail": "admin@admin.com",
+        "imageurl": "http",
+        "roles": [
+            {
+                "role": {
+                    "roleid": 2,
+                    "name": "USER"
+                }
+            }
+        ],
+        "boards": [
+            {
+                "boardid": 8,
+                "title": "Board Test",
+                "description": "Test description",
+                "thumbnail": "Test thumbnail",
+                "articles": [
+                    {
+                        "article": {
+                            "articleid": 9,
+                            "url": "Test url",
+                            "title": "Test title",
+                            "author": "Test author",
+                            "source": "Test source",
+                            "publishedAt": "12/16/20",
+                            "urlToImage": "Test urlToImage",
+                            "content": "Test content url",
+                            "description": "test description"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userid": 7,
+        "username": "laurenemick",
+        "primaryemail": "lauren@emick.com",
+        "imageurl": "http",
+        "roles": [
+            {
+                "role": {
+                    "roleid": 2,
+                    "name": "USER"
+                }
+            }
+        ],
+        "boards": []
+    }
+]
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+</details>
 
-### Making a Progressive Web App
+<details>
+<summary>http://localhost:2019/users/myinfo</summary>
+  
+```JSON
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+{
+    "userid": 6,
+    "username": "admin",
+    "primaryemail": "admin@admin.com",
+    "imageurl": "http",
+    "roles": [
+        {
+            "role": {
+                "roleid": 2,
+                "name": "USER"
+            }
+        }
+    ],
+    "boards": [
+        {
+            "boardid": 8,
+            "title": "Board Test",
+            "description": "Test description",
+            "thumbnail": "Test thumbnail",
+            "articles": [
+                {
+                    "article": {
+                        "articleid": 9,
+                        "url": "Test url",
+                        "title": "Test title",
+                        "author": "Test author",
+                        "source": "Test source",
+                        "publishedAt": "12/16/20",
+                        "urlToImage": "Test urlToImage",
+                        "content": "Test content url",
+                        "description": "test description"
+                    }
+                }
+            ]
+        }
+    ]
+}
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+</details>
 
-### Deployment
+<details>
+<summary>http://localhost:2019/articles/articles</summary>
+  
+```JSON
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[
+    {
+        "articleid": 4,
+        "url": "http",
+        "title": "World War II",
+        "author": "History.com editors",
+        "source": "History",
+        "publishedAt": "12/16/20",
+        "urlToImage": "",
+        "content": "https://www.history.com/topics/world-war-ii/world-war-ii-history",
+        "description": "",
+        "boards": []
+    },
+    {
+        "articleid": 5,
+        "url": "http",
+        "title": "Nuclear",
+        "author": "",
+        "source": "Institute for Energy Research",
+        "publishedAt": "12/01/17",
+        "urlToImage": "",
+        "content": "https://www.instituteforenergyresearch.org/?encyclopedia=nuclear&gclid=CjwKCAiA_eb-BRB2EiwAGBnXXjJk4Y278Ze_GNN6994HVRPaY7JyazyscknMw_V1Qzdmf8bkVYYMPRoC7l8QAvD_BwE",
+        "description": "Nuclear power comes from the process of nuclear fission, or the splitting of atoms. The resulting controlled nuclear chain reaction creates heat, which is used to boil water, produce steam, and drive turbines that generate electricity.",
+        "boards": []
+    },
+    {
+        "articleid": 9,
+        "url": "Test url",
+        "title": "Test title",
+        "author": "Test author",
+        "source": "Test source",
+        "publishedAt": "12/16/20",
+        "urlToImage": "Test urlToImage",
+        "content": "Test content url",
+        "description": "test description",
+        "boards": [
+            {
+                "board": {
+                    "boardid": 8,
+                    "title": "Board Test",
+                    "description": "Test description",
+                    "thumbnail": "Test thumbnail"
+                }
+            }
+        ]
+    }
+]
 
-### `npm run build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
+
+<details>
+<summary>http://localhost:2019/articles/article/9</summary>
+  
+```JSON
+
+{
+    "articleid": 9,
+    "url": "Test url",
+    "title": "Test title",
+    "author": "Test author",
+    "source": "Test source",
+    "publishedAt": "12/16/20",
+    "urlToImage": "Test urlToImage",
+    "content": "Test content url",
+    "description": "test description",
+    "boards": [
+        {
+            "board": {
+                "boardid": 8,
+                "title": "Board Test",
+                "description": "Test description",
+                "thumbnail": "Test thumbnail"
+            }
+        }
+    ]
+}
+
+```
+
+</details>
+
+<details>
+<summary>http://localhost:2019/boards/boards</summary>
+  
+```JSON
+
+[
+    {
+        "boardid": 8,
+        "title": "Board Test",
+        "description": "Test description",
+        "thumbnail": "Test thumbnail",
+        "articles": [
+            {
+                "article": {
+                    "articleid": 9,
+                    "url": "Test url",
+                    "title": "Test title",
+                    "author": "Test author",
+                    "source": "Test source",
+                    "publishedAt": "12/16/20",
+                    "urlToImage": "Test urlToImage",
+                    "content": "Test content url",
+                    "description": "test description"
+                }
+            }
+        ]
+    }
+]
+
+```
+
+</details>
+
+<details>
+<summary>http://localhost:2019/boards/board/8</summary>
+  
+```JSON
+
+{
+    "boardid": 8,
+    "title": "Board Test",
+    "description": "Test description",
+    "thumbnail": "Test thumbnail",
+    "articles": [
+        {
+            "article": {
+                "articleid": 9,
+                "url": "Test url",
+                "title": "Test title",
+                "author": "Test author",
+                "source": "Test source",
+                "publishedAt": "12/16/20",
+                "urlToImage": "Test urlToImage",
+                "content": "Test content url",
+                "description": "test description"
+            }
+        }
+    ]
+}
+
+```
+
+</details>
+
+
+#### POST
+
+<details>
+<summary>http://localhost:2019/boards/board</summary>
+  
+```JSON
+
+{
+	"title": "Board Test 2",
+	"description": "Test description 2",
+	"thumbnail": "Test thumbnail 2"
+}
+
+```
+
+OUTPUT
+
+```TEXT
+
+Status 201 created
+
+```
+
+</details>
+
+<details>
+<summary>http://localhost:2019/articles/article</summary>
+  
+```JSON
+
+{
+    "articleid": 9,
+    "url": "Test url",
+    "title": "Test title",
+    "author": "Test author",
+    "source": "Test source",
+    "publishedAt": "12/16/20",
+    "urlToImage": "Test urlToImage",
+    "content": "Test content url",
+    "description": "test description",
+    "boards": [
+        {
+            "board": {
+                "boardid": 8,
+                "title": "Board Test",
+                "description": "Test description",
+                "thumbnail": "Test thumbnail"
+            }
+        }
+    ]
+}
+
+```
+
+OUTPUT
+
+```TEXT
+
+Status 201 created
+
+```
+
+</details>
+
+
+#### PUT
+
+<details>
+<summary>http://localhost:2019/users/user/6</summary>
+  
+```JSON
+
+{
+    "boardid": 8,
+    "title": "Board Test Updated",
+    "description": "Test description",
+    "thumbnail": "Test thumbnail",
+    "articles": [
+        {
+            "article": {
+                "articleid": 9,
+                "url": "Test url",
+                "title": "Test title",
+                "author": "Test author",
+                "source": "Test source",
+                "publishedAt": "12/16/20",
+                "urlToImage": "Test urlToImage",
+                "content": "Test content url",
+                "description": "test description"
+            }
+        }
+    ]
+}
+
+```
+
+OUTPUT
+
+```TEXT
+
+No Body Data
+
+Status OK
+
+```
+
+</details>
+
+
+<details>
+<summary>http://localhost:2019/articles/article/9</summary>
+  
+```JSON
+
+{
+    "articleid": 9,
+    "url": "Test url updated",
+    "title": "Test title",
+    "author": "Test author",
+    "source": "Test source",
+    "publishedAt": "12/16/20",
+    "urlToImage": "Test urlToImage",
+    "content": "Test content url",
+    "description": "test description",
+    "boards": [
+        {
+            "board": {
+                "boardid": 8,
+                "title": "Board Test Updated",
+                "description": "Test description",
+                "thumbnail": "Test thumbnail"
+            }
+        }
+    ]
+}
+
+```
+
+OUTPUT
+
+```TEXT
+
+No Body Data
+
+Status OK
+
+```
+
+</details>
+
+<details>
+<summary>http://localhost:2019/boards/board/8</summary>
+  
+```JSON
+
+{
+    "boardid": 8,
+    "title": "Board Test Updated",
+    "description": "Test description",
+    "thumbnail": "Test thumbnail",
+    "articles": [
+        {
+            "article": {
+                "articleid": 9,
+                "url": "Test url",
+                "title": "Test title",
+                "author": "Test author",
+                "source": "Test source",
+                "publishedAt": "12/16/20",
+                "urlToImage": "Test urlToImage",
+                "content": "Test content url",
+                "description": "test description"
+            }
+        }
+    ]
+}
+
+```
+
+OUTPUT
+
+```TEXT
+
+No Body Data
+
+Status OK
+
+```
+
+</details>
+
+
+#### DELETE
+
+<details>
+<summary>http://localhost:2019/articles/article/9</summary>
+  
+OUTPUT
+
+```TEXT
+
+No Body Data
+
+Status 200 OK
+
+```
+
+</details>
+
+<details>
+<summary>http://localhost:2019/boards/board/10</summary>
+  
+OUTPUT
+
+```TEXT
+
+No Body Data
+
+Status 200 OK
+
+```
+
+</details>
+
+
+## Documentation
+
+[DB Schema](https://dbdesigner.page.link/9Z28kEt5hxtdi5qK7)
+
+[User Flow](https://whimsical.com/pintreach-WBR5cRD4eEbugaMTDgmvvV)
+
+[Wireframes](https://whimsical.com/pintreach-U5QsVRc1KFcAn8sNvcfcVz)
+

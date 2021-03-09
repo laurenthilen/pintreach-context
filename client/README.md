@@ -38,6 +38,8 @@ Pintreach is an article sharing application and research tool designed to enable
 - Swagger
 - Maven
 
+#### Backend repo
+[https://github.com/laurenemick/pintreach-backend](https://github.com/laurenemick/pintreach-backend)
 
 ## APIs
 

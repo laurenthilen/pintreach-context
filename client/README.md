@@ -7,6 +7,8 @@ Pintreach is an article sharing application and research tool designed to enable
 
 #### Website
 [https://pintreach.netlify.app/](https://pintreach.netlify.app/)
+#### Backend Code
+[https://github.com/laurenemick/pintreach-backend/tree/main](https://github.com/laurenemick/pintreach-backend/tree/main)
 
 ## User Stories
 
